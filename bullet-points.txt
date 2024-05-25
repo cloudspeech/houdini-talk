@@ -1,0 +1,51 @@
+Houdini's Magic Trick for the Enterprise
+=========================================
+
+[Structure after
+https://nathanbrixius.wordpress.com/2020/01/29/how-i-create-presentation-content/
+point 1]
+
+## Who is the audience for the presentation?
+
+Attendants of AXA DevCon on June 4, 2024. An internal developer
+conference at AXA Switzerland, not open to the public
+AFAIK. Developers which may or may not have frontend experience, may
+have never heard about web components, or if, perhaps with negative
+connotation. From junior level, even apprentices to very senior level.
+
+Who else is likely to see the presentation?
+
+Perhaps Katrin, the CIO? (I should invite her!) If video is allowed,
+future talk committee members at international conferences who have
+to decide whether I should give a talk at *their* conference!
+
+Why do they care about the subject?
+
+They care unwittingly because they will have typical enterprise
+problems to solve and may not know the escape hatch, which is 'there's
+a web component for that'. They care when told that web is the most
+successful software delivery platform of the world.
+
+What do I want them to know about the topic? (3-5 things)
+
+1. There's a magic trick to escape any impossible enterprisey
+situation when you are on the web: write another web component!
+2. Here's five typical situation where this works....
+3. Web components have been badmouthed, but enterprises quietly adopt
+them more and more - and you can, too!
+4. Case study: <sig-nal> enables server-side rendering for the enterprise
+5. Being entangled in enterprise is fun, once you accept the challenge
+and free yourself like Houdini, which means in 2024: there's a web
+component for that!
+
+What I hope to accomplish by presenting? (1-3 things)
+(This is what you want, not what the audience wants. e.g. for a
+project to be funded, to hire more people, to give management
+confidence in the team’s capabilities.)
+
+1. Clear the bad image of web components
+2. Show my technical expertise in an easy-to-understand way
+3. Gain trust for teaching as AXA's ambassador at Swiss institutions
+of higher learning and as a conference speaker at international
+frontend conferences
+
