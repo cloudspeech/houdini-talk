@@ -3,7 +3,7 @@
 
 ## Who was Houdini?
 
-Harry Houdini was a professional American magician and escape artist famous for his stunts where he invariably escaped impossible-looking situations. [Washington DC prison escape](https://parkviewdc.com/2010/10/01/houdinis-escape-from-the-10th-precinct/).
+Harry Houdini was a professional American magician and escape artist famous for his stunts in which he invariably escaped impossible-looking situations. In the [Washington DC prison escape](https://parkviewdc.com/2010/10/01/houdinis-escape-from-the-10th-precinct/) of January 1, 1906 it took him 18 minutes to defeat his handcuffs, 5 locks of his cell, and get his clothes from the neighbouring cell. "Stone walls and chains do not make a prison - for Houdini" reads the caption of his photo.
 ## What is Enterprise?
 
 ## The Magic Trick
