@@ -133,8 +133,8 @@ new tag becomes visible.
 Step 2: invent your own attributes to control that
 new behaviour.
 
-Because "script when visible, script when idle" sounds good, we decide
-invent the `when` attribute:
+Because "script when visible, or script when idle" sounds good, we decide
+to invent the `when` attribute:
 
 ```html
 <scri-pt when="visible">...</scri-pt>
@@ -164,7 +164,7 @@ Step 4: now do-it-yourself, _define_ the new behaviour.
 
 Keep it simple.
 
-And use plain old JavaScript:
+No framework, just plain old JavaScript:
 
 ```js
 class ScriPt extends HTMLElement {
@@ -182,7 +182,7 @@ class ScriPt extends HTMLElement {
 customElements.define("scri-pt", ScriPt);
 ```
 
-Aaand... in just 11 lines of code, Houdini's escape is perfect, because
+Aaand... in just 11 lines of code, Houdini's escape is perfect:
 script-with-a-dash does the trick!
 
 To see a production version of this _live_ &mdash; under the alias
