@@ -273,30 +273,31 @@ Imagine customer research has found that some users hate you.
 They click on that link in their email, and don't understand the
 German page that opens.
 
-And right now that means a full page reload to switch to English or
-whatever.
+They use the language selector.
 
-Your boss yells "no reload", but "don't change anything else".
+And they hate the wait while the page reloads in English or whatever.
 
-Oh, "and no performance regression, please."
+Your boss yells "no reload, but don't you change anything else".
+
+"And no performance regression, please."
 
 Impossible situation again, or not?
 
 How about... a little inspiration from Mister Houdini?
 
-Step 1: wish yourself `<trans-late>`.
+Step 1: wish yourself trans-dash-late (`<trans-late>`).
 
 A web component which knows how to translate text when the page language changes.
 
-Then step 2: no attributes needed.
+Skip step 2: no attributes are needed!
 
-Why? Because we can make it depend on the page language:
+Why? Because we can just observe updates of the `lang` attribute:
 
 ```html
 <html lang="en">
 ```
 
-Changing _that_ requires 1 line of JavaScript in the language selector.
+And changing _that_ requires 1 line of JavaScript in the language selector.
 
 Moving on to Step 3: compose:
 
@@ -307,7 +308,7 @@ Moving on to Step 3: compose:
 ```
 
 Anything under template is not rendered by the browser, so we're fine
-visually. The HTML speaks for itself.
+visually. The HTML is so clear, it speaks for itself.
 
 Finally, Step 4: do-it-yourself, define trans-late in JavaScript.
 
@@ -357,14 +358,15 @@ A new twist of Houdini's trick, the self-vanishing web component!
 
 At the end, trans-dash-late _replaces_ itself _with_ the text itself.
 
-The trick is to keep a pointer to that text node before you vanish.
+Text is also a DOM node, so the trick is to keep a reference to
+that node before you vanish. 
 
 Then, when the page language changes, we just update all the nodes,
 and bingo &mdash; no page reloads!
 
 The take-home message is this:
 
-You are in full control of your web component's behaviour, how cool is that!
+You are in _full_ control of your web component's behaviour, how cool is that!
 
 ### 5. Server-Side Rendering for the Enterprise
 
