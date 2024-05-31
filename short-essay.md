@@ -188,7 +188,7 @@ script-with-a-dash does the trick!
 To see a production version of this _live_ &mdash; under the alias
 axa-script,&mdash; just visit _any_ [axa.ch](https://axa.ch) page.
 
-### 3. Microfrontends
+### 3. Situatiom: Microfrontends
 
 The idea of Microfrontends is to embed apps inside plain old HTML
 pages.
@@ -206,7 +206,7 @@ After login they come back and only _then_ start the app.
 Others are of the type where you want to wait till all the markup is
 parsed, that is until DOM is loaded.
 
-How can you model such microfrontend embedding in HTML?
+How can you model all kinds of microfrontend embedding in HTML?
 
 Easy.
 
@@ -232,7 +232,7 @@ Step 3, compose:
 ```
 
 That snippet means: place a microfrontend of type dom-loaded here, to
-be started once this place is visible and the big app bundle has
+be started once this part of the web page is visible and the big app bundle has
 loaded.
 
 Notice how we did not have to define app-loading, but could reuse
@@ -242,9 +242,15 @@ That's the power of HTML composition at work!
 
 Step 4: do-it-yourself, define micro-dash-frontend in JavaScript.
 
-I will spare you the details, but it's only 3-point-4 kiloBytes compressed.
+I will spare you the details, but it's only 3-point-4 kiloBytes
+compressed.
 
-You can see it live on [axa.ch](https://axa.ch) pages under the alias webhub-pod.
+This is because Houdini's trick needs little code, if you think carefully about
+composition first.
+
+Each web component should only do one thing, and do it well.
+
+Finally, you can see micro-dash-frontend live on [axa.ch](https://axa.ch) pages under the alias webhub-pod.
 
 ### 4. Internationalization
 
