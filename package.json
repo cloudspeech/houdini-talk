@@ -1,0 +1,15 @@
+{
+    "name": "houdini-talk",
+    "author": "Markus Walther",
+    "license": "MIT",
+    "scripts": {
+	"format":"bun run prettier --arrow-parens=avoid --write src/scri-pt.js; bun run prettier --arrow-parens=avoid --write src/trans-late.js;",
+	"start": "bun --hot run ./server.js"
+    },
+    "devDependencies": {
+	"prettier": "^3.0.3",
+	"serve-static-bun": "^0.5.3",
+	"terser": "^5.19.4"
+    }
+}
+

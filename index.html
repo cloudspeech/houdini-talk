@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="description" content="Houdini talk about the power of web components for Enterprise frontend"/>
+    <meta name="theme-color" content="#ffffff">
+    <title>Houdini talk</title>
+    <script type="module" src="./src/scri-pt.js"></script>
+    <style>
+      select#language {
+      position: fixed;
+      top: 1em;
+      right: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <select aria-label="select language" id="language" onchange="document.documentElement.setAttribute('lang', this.value)">
+      <option selected value="en">EN</option>
+      <option value="de">DE</option>
+    </select>
+
+    <scri-pt when="idle">
+      <template>
+	<script type="module" src="./src/trans-late.js"></script>
+	<link rel="stylesheet" href="./styles.css"/>
+      </template>
+    </scri-pt>
+
+    <h1><trans-late>Houdini's Magic Trick for the Enterprise
+	<template lang="de">Houdini's Magischer Trick für Enterprise Frontend</template>
+      </trans-late>
+    </h1>
+
+    <h2>Markus Walther, AXA DevCon, June 4, 2024</h2>
+  </body>
+</html>
