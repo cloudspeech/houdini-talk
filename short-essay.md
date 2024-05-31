@@ -188,13 +188,13 @@ script-with-a-dash does the trick!
 To see a production version of this _live_ &mdash; under the alias
 axa-script,&mdash; just visit _any_ [axa.ch](https://axa.ch) page.
 
-### 3. Situatiom: Microfrontends
+### 3. Situation: Microfrontends
 
 The idea of Microfrontends is to embed apps inside plain old HTML
 pages.
 
 If you do it right, teams can then deploy and maintain those
-apps independent of your site releases, which is a huge win.
+apps _independent_ of your site releases, which is a huge win.
 
 But not all apps are alike.
 
