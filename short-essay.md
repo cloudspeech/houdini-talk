@@ -115,13 +115,13 @@ Should you give up, or can you escape the impossible situation?
 
 Of course, you can escape &mdash; use Houdini's trick!
 
-Step 1: wish yourself a new HTML tag `<scri-pt>` script-with-a-dash with new
+Step 1: wish yourself a new HTML tag `<scri-pt>` called script-with-a-dash with new
 behaviour. Here we want to delay loading an asset until when the
 browser is idle, or when that part of the page becomes visible because
 you scroll down.
 
 Step 2: decide on the attributes to control that
-ideal behaviour. `when` reads nice as an attribute name:
+new behaviour. `when` reads nice as an attribute name:
 
 ```html
 <scri-pt when="visible">...</scri-pt>
@@ -131,7 +131,7 @@ ideal behaviour. `when` reads nice as an attribute name:
 Step 3: compose your HTML as a mix of old tags and your new one.
 
 Because nothing loads automatically inside a `<template>` tag, we can
-put what to load safely _inside_ script-with-a-dash:
+wrap the things to load with it and then put everything _inside_ script-with-a-dash:
 
 ```html
 <scri-pt when="visible">
@@ -140,6 +140,9 @@ put what to load safely _inside_ script-with-a-dash:
   </template>
 </scri-pt>
 ```
+
+This snippet means: load that big fat bundle only when the user
+scrolled down so that script-with-a-dash is visible.
 
 Step 4: do-it-yourself, define the new behaviour &mdash; and nothing else,
 please &mdash; in plain old JavaScript:
@@ -160,7 +163,7 @@ class ScriPt extends HTMLElement {
 customElements.define("scri-pt", ScriPt);
 ```
 
-Aaand... in just 11 lines of code, Houdini's escape is perfect,
+Aaand... in just 11 lines of code, Houdini's escape is perfect, because
 script-with-a-dash does the trick!
 
 To see this live in production under the nickname axa-script, visit any [axa.ch](https://axa.ch) web page.
