@@ -474,21 +474,28 @@ Step 3: compose
 That reads as follows:
 
 when the counter value updates, update the text
-content of that `<div>`. It starts out at 3.
+content of that `<div>`. Initially, that is 3.
 
 When you click on the plus-labelled button,
-increment the signal named counter. 3 becomes 4, and so on.
+increment the signal named counter. 3 becomes 4, you click again, it
+becomes 5, you get the idea.
 
-Likewise, decrement when hitting
-that minus-labelled button. 3 becomes 2, and so on.
+Likewise, when hitting
+that minus-labelled button, you decrement the counter signal. 3 becomes 2, and so on.
 
-It's this short, but it will work without any compiler, I promise.
+It's this short, but it will work without any compiler &mdash; I promise!
 
 Step 4: do-it-yourself, define sig-nal in JavaScript. Under 1 KB
 compressed, that's all you need. Open-sourced [here](https://github.com/cloudspeech/sig-nal).
 
-This is Houdini's trick at it's peak. Pure no-build goodness,
-[Lighthouse-100 performance](https://cloudspeech.github.io/sig-nal/counter.html).
+This is the last example, this is Houdini's trick at it's peak.
+
+It's pure no-build goodness.
+
+It gives you [Lighthouse-100
+performance](https://cloudspeech.github.io/sig-nal/counter.html).
+
+Let me demo it real quick.
 
 ## Haters gonna hate, but Enterprise knows better
 
