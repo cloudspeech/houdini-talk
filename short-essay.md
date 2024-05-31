@@ -121,16 +121,20 @@ Step 1: wish yourself a new HTML tag called script-with-a-dash
 (`<scri-pt>`) with new
 behaviour.
 
-Here we want to delay loading an asset until the
+Here we want at least two things.
+
+One is to delay loading an asset until the
 browser is idle. Idle means the browser is not busy doing more
-important things like painting pixels. Or we want to delay loading until you scroll down _so much_ so that the
+important things like painting pixels.
+
+The other is to delay loading until you scroll down _so much_ so that the
 new tag becomes visible.
 
 Step 2: invent your own attributes to control that
 new behaviour.
 
-`when` is a nice attribute name here, because "script
-when visible, script when idle" sound good:
+Because "script when visible, script when idle" sound good, we invent
+the `when` attribute:
 
 ```html
 <scri-pt when="visible">...</scri-pt>
@@ -156,8 +160,11 @@ That snippet means:
 load that big fat bundle _only_ when the user
 scrolled down _so much_ that script-with-a-dash is visible.
 
-Step 4: now do-it-yourself, _define_ the new behaviour. Keep it
-simple. Use plain old JavaScript:
+Step 4: now do-it-yourself, _define_ the new behaviour.
+
+Keep it simple.
+
+Use plain old JavaScript:
 
 ```js
 class ScriPt extends HTMLElement {
@@ -178,7 +185,8 @@ customElements.define("scri-pt", ScriPt);
 Aaand... in just 11 lines of code, Houdini's escape is perfect, because
 script-with-a-dash does the trick!
 
-To see a production version of this live &mdash; under the alias axa-script,&mdash; visit _any_ [axa.ch](https://axa.ch) web page.
+To see a production version of this _live_ &mdash; under the alias
+axa-script,&mdash; just visit _any_ [axa.ch](https://axa.ch) web page.
 
 ### 3. Microfrontends
 
