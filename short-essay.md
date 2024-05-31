@@ -335,7 +335,7 @@ Step 3: compose
     </template>
 ```
 
-Step 4: do-it-yourself, define sig-nal in JavaScript. 1009 Bytes
+Step 4: do-it-yourself, define sig-nal in JavaScript. Under 1 KB
 compressed, that's all you need. Open-sourced [here](https://github.com/cloudspeech/sig-nal).
 
 This is Houdini's trick at it's peak. Pure no-build goodness,
