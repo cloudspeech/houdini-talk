@@ -108,7 +108,7 @@ But you don't own
 the pages, hundreds of kilobytes of JavaScript and CSS assets must
 stay.
 
-Those assets are loaded via `<script>` and `<link>` tags,
+Those assets are loaded via `<script>` and `<link>` tags, as usual,
 which _also_ have to stay in place.
 
 Should you give up, or can you escape the impossible situation? 
@@ -127,14 +127,14 @@ One is to delay loading an asset until the
 browser is idle. Idle means the browser is not busy doing more
 important things like painting pixels.
 
-The other is to delay loading until you scroll down _so much_ so that the
+The other behaviour is to delay loading until you scroll down _so much_ so that the
 new tag becomes visible.
 
 Step 2: invent your own attributes to control that
 new behaviour.
 
-Because "script when visible, script when idle" sound good, we invent
-the `when` attribute:
+Because "script when visible, script when idle" sounds good, we decide
+invent the `when` attribute:
 
 ```html
 <scri-pt when="visible">...</scri-pt>
@@ -164,7 +164,7 @@ Step 4: now do-it-yourself, _define_ the new behaviour.
 
 Keep it simple.
 
-Use plain old JavaScript:
+And use plain old JavaScript:
 
 ```js
 class ScriPt extends HTMLElement {
@@ -186,7 +186,7 @@ Aaand... in just 11 lines of code, Houdini's escape is perfect, because
 script-with-a-dash does the trick!
 
 To see a production version of this _live_ &mdash; under the alias
-axa-script,&mdash; just visit _any_ [axa.ch](https://axa.ch) web page.
+axa-script,&mdash; just visit _any_ [axa.ch](https://axa.ch) page.
 
 ### 3. Microfrontends
 
