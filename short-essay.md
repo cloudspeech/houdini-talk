@@ -43,7 +43,7 @@ styling, 'how it looks', and JavaScript - the interactivity, 'how it responds'.
 
 Now typical enterprise restrictions are:
 
-- traditional, web pages full of HTML dominate. __Not__ SPAs, __not__ PWAs.
+- traditional, web pages dominate, lots and lots of HTML. __Not__ SPAs, __not__ PWAs.
 - you don't own the whole page
 - you can't run JavaScript on the server
 - SEO is crucial
@@ -75,24 +75,27 @@ How?
 
 I'll show you now.
 
-## Five typical situations where the trick works
+## Here's five typical situations where the trick works
 
-### 1. UI components
+### 1. Situation: UI components
 
 Most people know this one already - a design system is good for enterprise
 brand identity and includes UI components like buttons, form input
 elements, date pickers etc.
 
-AXA's design system is open source and built on web
-components since 2019. See
+AXA's design system is open source and built with web
+components.
+
+Since 2019. It's called the
 [AXA Pattern Library](https://axa-ch-webhub-cloud.github.io/plib-feature/develop/?path=/story/welcome--to-pattern-library).
 
-And they are live on every page of [axa.ch](https://axa.ch).
+And those components are live on every page of [axa.ch](https://axa.ch).
 
-Houdini's trick worked there. Many enterprises do this nowadays. Let's
-move on.
+Houdini's trick works. Many enterprises do the same nowadays.
 
-### 2. Slow Page Performance
+Let's move on to the next situation.
+
+### 2. Situation: Slow Page Performance
 
 Your boss tells you to make things load faster, because Google's
 rating dropped... Oh, and can it be done tomorrow? But you don't own
