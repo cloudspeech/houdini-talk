@@ -194,30 +194,32 @@ The idea of Microfrontends in a nutshell is this:
 
 > embed apps in HTML.
 
-Such apps are written in JavaScript, and can be placed _somewhere_ on web pages.
+Such apps are written in JavaScript and placed _somewhere_ on
+a web page.
 
-If you do it right, teams can then deploy and maintain those
+They could be good for anything, like calculating a
+mortgage or show your insurances or whatever.
+
+If you do it right, teams can then deploy and maintain such
 apps _independent_ of your site releases, which is a huge win.
 
 But not all apps are alike.
 
-For example, some need to navigate to a
-login page first for user authentication.
+For example, some might first require login for user authentication.
 
-After login they come back and only _then_ start and render themselves.
+Only _after_ login can the app start and render itself.
 
-Others are of the type where you want to _wait_ till all the markup is
-parsed, that is until DOM is loaded.
+Others require _waiting_ till all markup is parsed by
+the browser, also known as 'DOM loaded'.
 
-Now the crucial question is: How can you embed _all_ kinds of
-microfrontend apps in HTML?
+How can you embed _all_ such types of microfrontend apps in HTML?
 
-You guessed it, that's easy if you use Houdini's trick.
+You guessed it: easy-peasy if you use Houdini's trick!
 
 First, do step 1 again: wish yourself micro-dash-frontend
 (`<micro-frontend>`).
 
-That is to say, a web component which knows how to embed any kind of app and start it.
+That is to say, a web component which knows how to embed _and_ start any type of app.
 
 Step 2, add attributes.
 
@@ -260,7 +262,9 @@ composition _first_.
 
 Each web component should only do _one_ thing, and do it well.
 
-Finally, I invite you to see micro-dash-frontend for yourself, _live_ on [axa.ch](https://axa.ch) pages, under the alias webhub-pod.
+Finally, I invite you to see micro-dash-frontend for yourself!
+
+It's _live_ on [axa.ch](https://axa.ch) pages, under the alias webhub-pod.
 
 ### 4. Internationalization
 
