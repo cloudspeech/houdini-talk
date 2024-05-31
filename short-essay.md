@@ -474,7 +474,7 @@ Step 3: compose
 That reads as follows:
 
 when the counter value updates, update the text
-content of that `<div>`. Initially, that is 3.
+content of that `<div>`. Initially it's 3.
 
 When you click on the plus-labelled button,
 increment the signal named counter. 3 becomes 4, you click again, it
@@ -486,14 +486,14 @@ that minus-labelled button, you decrement the counter signal. 3 becomes 2, and s
 It's this short, but it will work without any compiler &mdash; I promise!
 
 Step 4: do-it-yourself, define sig-nal in JavaScript. Under 1 KB
-compressed, that's all you need. Open-sourced [here](https://github.com/cloudspeech/sig-nal).
+compressed, that's all you need. I open-sourced it [here](https://github.com/cloudspeech/sig-nal).
 
-This is the last example, this is Houdini's trick at it's peak.
+This is the last example, this is Houdini's trick at its best.
 
 It's pure no-build goodness.
 
-It gives you [Lighthouse-100
-performance](https://cloudspeech.github.io/sig-nal/counter.html).
+And it gives you that awesome [Lighthouse-100
+performance rating](https://cloudspeech.github.io/sig-nal/counter.html).
 
 Let me demo it real quick.
 
@@ -501,17 +501,21 @@ Let me demo it real quick.
 
 I am not living under a rock.
 
-Of course I know about blog posts like that one from the creator of Svelte,
+_Of course_ I know about blog posts like that famous one from the creator of Svelte,
 [Rich Harris: Why I don't use web
 components](https://dev.to/richharris/why-i-don-t-use-web-components-2cia).
 
-But Enterprise has overwhelmingly voted with their feet, see [arewebcomponentsathingyet.com](https://arewebcomponentsathingyet.com/):
+But it seems Enterprise has overwhelmingly voted with their feet, as
+[arewebcomponentsathingyet.com](https://arewebcomponentsathingyet.com/)
+shows:
 
 <img width="479" alt="Screenshot 2024-05-31 at 13 37 48" src="https://github.com/cloudspeech/houdini-talk/assets/850521/f9fc74a7-2c7c-4817-85c8-179cb9782575">
 
 So haters gonna hate, but they can't touch Houdini.
 
 ## Happy escaping!
+
+Let me summarize real quick.
 
 I work in Enterprise frontend, that's where the jobs are.
 
@@ -520,11 +524,15 @@ And I discovered Houdini's magic trick:
 There's an ~~app~~ web component for that!
 
 I am happy again because I can help myself in every impossible
-situation where I cannot change much around me, but I can bend HTML to
+situation:
+
+I might not be able to change much around me, but at least I can bend HTML to
 my will.
 
-That's what web components do for you, a principled way to escape.
+That's what web components do for me, that's why I recommend them to _you_:
 
-Happy escaping to all of you, and thanks for listening!
+they give you a principled way to escape.
+
+So, happy escaping to all of you, and thanks for listening!
 
 
