@@ -203,7 +203,7 @@ login page first for user authentication.
 
 After login they come back and only _then_ start the app.
 
-Others are of the type where you want to wait till all the markup is
+Others are of the type where you want to _wait_ till all the markup is
 parsed, that is until DOM is loaded.
 
 Now the crucial question is: How can you embed _all_ kinds of microfrontends in HTML?
@@ -233,9 +233,10 @@ Step 3, compose:
 </micro-frontend>
 ```
 
-That snippet means: place a microfrontend of type dom-loaded here, to
-be started once this part of the web page is visible and the big app bundle has
-loaded.
+That snippet means: place a microfrontend of type dom-loaded here.
+
+The app will start and render under micro-dash-frontend once we are visible and
+the big app bundle has loaded.
 
 Notice how we did not have to define app-loading, but could reuse
 script-with-a-dash?
@@ -252,7 +253,7 @@ composition _first_.
 
 Each web component should only do _one_ thing, and do it well.
 
-Finally, see micro-dash-frontend for yourself, _live_ on [axa.ch](https://axa.ch) pages, under the alias webhub-pod.
+Finally, I invite you to see micro-dash-frontend for yourself, _live_ on [axa.ch](https://axa.ch) pages, under the alias webhub-pod.
 
 ### 4. Internationalization
 
