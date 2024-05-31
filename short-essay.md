@@ -104,12 +104,13 @@ ideal behaviour. `when` reads nice:
 
 ```html
 <scri-pt when="visible">...</scri-pt>
-<scri-pt when="dom-loaded">...</scri-pt>
+<scri-pt when="idle">...</scri-pt>
 ```
 
 Step 3: compose HTML as mix of old tags and your new tag.
 
-Nothing loads inside a `<template>` tag, so we can do this:
+Nothing loads inside a `<template>` tag, so we can have simple markup
+like this:
 
 ```html
 <scri-pt when="visible">
@@ -215,6 +216,44 @@ Anything under template is not rendered by the browser, so we're fine
 visually. The HTML speaks for itself.
 
 Step 4: do-it-yourself, define trans-late in JavaScript.
+
+```js
+const textNodes = new Map();
+
+const getPageLanguage = () => document.documentElement.getAttribute("lang");
+
+let pageLanguage = getPageLanguage();
+
+const observer = new MutationObserver(() => {
+  const language = getPageLanguage();
+  for (let [textNode, translations] of textNodes) {
+    textNode.textContent = translations[language];
+  }
+});
+
+observer.observe(document.documentElement, {
+  attributes: true,
+  attributeFilter: ["lang"],
+});
+
+class TransLate extends HTMLElement {
+  connectedCallback() {
+    const text = this.textContent.trim();
+    const textNode = new Text(text);
+    const translations = { [pageLanguage]: text };
+    this.querySelectorAll("template").forEach(template => {
+      const language = template.getAttribute("lang");
+      const text = template.content.textContent.trim();
+      translations[language] = text;
+    });
+    textNodes.set(textNode, translations);
+    this.replaceWith(textNode);
+  }
+}
+
+customElements.define("trans-late", TransLate);
+
+```
 
 ### 5. Server-Side Rendering for the Enterprise
 
