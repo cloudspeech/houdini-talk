@@ -102,20 +102,20 @@ Therefore, let's move on to the next situation.
 Your boss tells you to make things load faster, because the Google
 rating dropped...
 
-Oh, and can you please make it happen by tomorrow?
+"Oh, and can you please make it happen by tomorrow?"
 
 But you don't own
 the pages, hundreds of kilobytes of JavaScript and CSS assets must
 stay.
 
 Those assets are loaded via `<script>` and `<link>` tags,
-which __also__ have to stay in place.
+which _also_ have to stay in place.
 
 Should you give up, or can you escape the impossible situation? 
 
 Of course, you can escape &mdash; use Houdini's trick!
 
-Step 1: wish yourself a new HTML tag `<scri-pt>` with new
+Step 1: wish yourself a new HTML tag `<scri-pt>` script-with-a-dash with new
 behaviour. Here we want to delay loading an asset until when the
 browser is idle, or when that part of the page becomes visible because
 you scroll down.
@@ -130,8 +130,8 @@ ideal behaviour. `when` reads nice as an attribute name:
 
 Step 3: compose your HTML as a mix of old tags and your new one.
 
-Because nothing loads automatically inside a `<template>` tag, we can have simple markup
-like this __inside__ script-with-a-dash:
+Because nothing loads automatically inside a `<template>` tag, we can
+put what to load safely _inside_ script-with-a-dash:
 
 ```html
 <scri-pt when="visible">
