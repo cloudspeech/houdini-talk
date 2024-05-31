@@ -253,6 +253,7 @@ class TransLate extends HTMLElement {
 customElements.define("trans-late", TransLate);
 
 ```
+28 lines of easy-to-understand JavaScript for Houdini's trick are enough here.
 
 ### 5. Server-Side Rendering for the Enterprise
 
