@@ -122,7 +122,7 @@ Step 1: wish yourself a new HTML tag called script-with-a-dash
 behaviour.
 
 Here we want to delay loading an asset until the
-browser is idle, has _time_, or until you scroll _down_ so that the
+browser is idle, has _time_, or until you scroll down _so much_ so that the
 new tag becomes visible.
 
 Step 2: invent your own attributes to control that
@@ -139,7 +139,8 @@ when visible, script when idle":
 Step 3: compose your markup as a mix of old tags and the new one.
 
 Because nothing loads automatically inside a `<template>` tag, we can
-wrap the things to load with a template and then put everything _inside_ script-with-a-dash:
+wrap the things to load with a template and then put
+script-with-a-dash around it:
 
 ```html
 <scri-pt when="visible">
@@ -154,7 +155,7 @@ That snippet means:
 load that big fat bundle _only_ when the user
 scrolled down _so much_ that script-with-a-dash is visible.
 
-Step 4: do-it-yourself, define the new behaviour &mdash; and just that,
+Step 4: now do-it-yourself, define the new behaviour &mdash; and just that,
 please, keep it simple &mdash; in plain old JavaScript:
 
 ```js
@@ -176,7 +177,7 @@ customElements.define("scri-pt", ScriPt);
 Aaand... in just 11 lines of code, Houdini's escape is perfect, because
 script-with-a-dash does the trick!
 
-To see this live in production under the alias axa-script, visit any [axa.ch](https://axa.ch) web page.
+To see this live in production &mdash; under the alias axa-script,&mdash; visit _any_ [axa.ch](https://axa.ch) web page.
 
 ### 3. Microfrontends
 
