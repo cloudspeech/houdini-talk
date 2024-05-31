@@ -133,14 +133,13 @@ class ScriPt extends HTMLElement {
     requestIdleCallback(this.#load);
   }
 
-  #load = () =>
-    this.appendChild(this.firstElementChild.content.cloneNode(true));
+  #load = () => this.appendChild(this.firstElementChild.content.cloneNode(true));
 }
 
 customElements.define("scri-pt", ScriPt);
 ```
 
-Aaand... in just 12 lines of code, Houdini's escape is perfect!
+Aaand... in just 11 lines of code, Houdini's escape is perfect!
 
 See a production version live on axa.ch web pages under the nickname axa-script.
 
