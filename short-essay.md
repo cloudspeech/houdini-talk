@@ -524,9 +524,9 @@ And I discovered Houdini's magic trick:
 There's an ~~app~~ web component for that!
 
 I am happy again because I can help myself in every impossible
-situation:
+situation.
 
-I might not be able to change much around me, but at least I can bend HTML to
+Yes, I might not be able to change much around me, but I can _always_ can bend HTML to
 my will.
 
 That's what web components do for me, that's why I recommend them to _you_:
