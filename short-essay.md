@@ -313,7 +313,7 @@ visually.
 
 The HTML is so clear, it speaks for itself.
 
-Finally, Step 4: do-it-yourself, define trans-late in JavaScript.
+Finally, Step 4: do-it-yourself, define trans-dash-late in JavaScript.
 
 ```js
 const textNodes = new Map();
@@ -361,11 +361,11 @@ Ladies and Gentlemen, a new stunt by Houdini: the self-vanishing web component!
 
 I say that because here trans-dash-late _replaces_ itself _with_ the text.
 
-How can that work?
+_How_ can that work?
 
-Well, Houdini's trick were secret, but this is open source, so here's how:
+Well, Houdini's tricks were all secret, but this is open source, so here's how:
 
-Text is also a DOM node, so we can store a global reference to it before we
+Text is _also_ a DOM node, so we can store a global reference to it before we
 remove the web component.
 
 Then, when the page language changes, we just update all the stored nodes,
@@ -373,7 +373,7 @@ and bingo &mdash; no page reloads!
 
 The take-home message is this:
 
-You are in _full_ control of your web component's behaviour, how cool is that!
+You are in _full_ control of your web component's behaviour, how cool is _that_?!!
 
 ### 5. Server-Side Rendering for the Enterprise
 
