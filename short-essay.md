@@ -356,11 +356,13 @@ Houdini's trick are enough here.
 
 But did you notice something?
 
-A new twist of Houdini's trick, the self-vanishing web component!
+Ladies and Gentlemen, a new stunt by Houdini: the self-vanishing web component!
 
-At the end, trans-dash-late _replaces_ itself _with_ the text,
+I say that because here trans-dash-late _replaces_ itself _with_ the text.
 
-Unlike Houdini, I tell you the trick:
+How can that work?
+
+Well, Houdini's trick were secret, but this is open source, so here's how:
 
 Text is also a DOM node, so we can store a global reference to it before we
 remove the web component.
