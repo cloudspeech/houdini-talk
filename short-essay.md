@@ -79,21 +79,23 @@ I'll show you now.
 
 ### 1. Situation: UI components
 
-Most people know this one already - a design system is good for enterprise
+Most people know this one already.
+
+A design system is good for enterprise
 brand identity and includes UI components like buttons, form input
-elements, date pickers etc.
+elements, date pickers and so on.
 
 AXA's design system is open source and built with web
-components.
+components since 2019.
 
-Since 2019. It's called the
+It's called the
 [AXA Pattern Library](https://axa-ch-webhub-cloud.github.io/plib-feature/develop/?path=/story/welcome--to-pattern-library).
 
-And those components are live on every page of [axa.ch](https://axa.ch).
+Those web components are live on every page of [axa.ch](https://axa.ch).
 
-Houdini's trick works. Many enterprises do the same nowadays.
+Houdini's trick simply works. These days many enterprises do the same.
 
-Let's move on to the next situation.
+Therefore, let's move on to the next situation.
 
 ### 2. Situation: Slow Page Performance
 
