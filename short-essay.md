@@ -149,8 +149,10 @@ wrap the things to load with a template and then put everything _inside_ script-
 </scri-pt>
 ```
 
-This snippet means: load that big fat bundle only when the user
-scrolled down so much that script-with-a-dash is visible.
+This snippet means:
+
+load that big fat bundle _only_ when the user
+scrolled down _so much_ that script-with-a-dash is visible.
 
 Step 4: do-it-yourself, define the new behaviour &mdash; and just that,
 please &mdash; in plain old JavaScript:
@@ -174,7 +176,7 @@ customElements.define("scri-pt", ScriPt);
 Aaand... in just 11 lines of code, Houdini's escape is perfect, because
 script-with-a-dash does the trick!
 
-To see this live in production under the nickname axa-script, visit any [axa.ch](https://axa.ch) web page.
+To see this live in production under the alias axa-script, visit any [axa.ch](https://axa.ch) web page.
 
 ### 3. Microfrontends
 
