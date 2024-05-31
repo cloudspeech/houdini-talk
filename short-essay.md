@@ -190,7 +190,7 @@ axa-script,&mdash; just visit _any_ [axa.ch](https://axa.ch) page.
 
 ### 3. Situation: Microfrontends
 
-The idea of Microfrontends is to embed apps inside plain old HTML
+The idea of Microfrontends is to embed JavaScript apps inside plain old HTML
 pages.
 
 If you do it right, teams can then deploy and maintain those
@@ -206,18 +206,20 @@ After login they come back and only _then_ start the app.
 Others are of the type where you want to wait till all the markup is
 parsed, that is until DOM is loaded.
 
-How can you model all kinds of microfrontend embedding in HTML?
+How can you embed _all_ kinds of microfrontends in HTML?
 
-Easy.
+That's easy.
 
-Step 1 again: wish yourself `<micro-frontend>`, which knows how
-to embed a microfrontend and start it.
+First, do step 1 again: wish yourself micro-dash-frontend
+(`<micro-frontend>`).
+
+A web component which knows how to embed any kind of app and start it.
 
 Step 2, add attributes.
 
 Use `type` to indicate which kind of microfrontend it is:
 
-`type="auth"` for authentication first, or `type="dom-loaded"` and so on.
+for example `type="auth"` for authentication-first, or `type="dom-loaded"` and so on.
 
 Step 3, compose:
 
@@ -238,9 +240,9 @@ loaded.
 Notice how we did not have to define app-loading, but could reuse
 script-with-a-dash?
 
-That's the power of HTML composition at work!
+That's the power of composition at work!
 
-Step 4: do-it-yourself, define micro-dash-frontend in JavaScript.
+Step 4: do-it-yourself, define micro-dash-frontend in pure JavaScript.
 
 I will spare you the details, but it's only 3-point-4 kiloBytes
 compressed.
