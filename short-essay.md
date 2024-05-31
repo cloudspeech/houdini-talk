@@ -266,16 +266,16 @@ Finally, I invite you to see micro-dash-frontend for yourself!
 
 It's _live_ on [axa.ch](https://axa.ch) pages, under the alias webhub-pod.
 
-### 4. Internationalization
+### Situation 4. Internationalization
 
-Imagine customer research has found that some users hate you.
+Imagine customer research has found that some users _hate_ you.
 
 They click on that link in their email, and don't understand the
 German page that opens.
 
-They use the language selector to switch to English or whatever.
+Then they use the language selector to switch to English or whatever.
 
-And then they hate the wait while the page reloads.
+And _then_ they really hate the wait while the page reloads.
 
 Your boss yells: "no reload, but don't you dare and change anything else".
 
@@ -379,8 +379,10 @@ organization.
 You know, that frontend hype thingie where you run JavaScript
 server-side to pump out web pages.
 
-You can't do that because you are rendering server-side already, your
-super-expensive Enterprise CMS written in Java pumps out web pages!
+You can't do that because you are rendering server-side already!
+
+Your super-expensive Enterprise CMS written in Java is the one that
+pumps out web pages!
 
 And they are composed out of server-side components, available since
 forever.
@@ -388,13 +390,20 @@ forever.
 So you whine because you work in the enterprise and your boring CV
 doesn't mention the latest frontend hypes.
 
-If you could only sprinkle a little magic interactivity here and there
-in the components' HTML, you could escape the impossible situation...
+You dream:
 
-And there's this other hot frontend hype, signals, for fine-grained
-reactive updating over time. Can we please have that too?
+>If I could only sprinkle a little magic interactivity here and there
+>in the components' HTML, I could escape the impossible situation...
+>
+> And there's this other hot frontend hype, signals: fine-grained
+> reactive updates for values that change over time.
+> Can I please have that too?
 
-Step 1: Wish yourself <`sig-nal>`, which knows how to react and apply updates to a
+Dream no more, Houdini to the rescue!
+
+Step 1: Wish yourself sig-dash-nal (<`sig-nal>`).
+
+A web component which knows how to react and apply updates to a
 certain place in your HTML.
 
 Step 2: add attributes.
@@ -423,11 +432,14 @@ Use `hydrate` to express your interactivity:
 
 ```html
 <sig-nal hydrate>
-      { /* JavaScript object expressing how to react
+      { /* JavaScript object expressing to what to react
            and how to update */
       }
 </sig-nal>
 ```
+
+That JavaScript object will express to what we have to react
+and how we should update
 
 Step 3: compose
 
