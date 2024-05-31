@@ -90,6 +90,7 @@ ideal behaviour. `when` reads nice:
 ```html
 <scri-pt when="visible">...</scri-pt>
 <scri-pt when="dom-loaded">...</scri-pt>
+```
 
 Step 3: compose HTML as mix of old tags and your new tag.
 
@@ -101,6 +102,7 @@ Nothing loads inside a `<template>` tag, so we can do this:
     <script src="big-fat-bundle.js"></script>
   </template>
 </scri-pt>
+```
 
 Step 4: do-it-yourself, define the behaviour (and nothing else) in
 plain old JavaScript:
