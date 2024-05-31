@@ -1,4 +1,6 @@
 # Houdini's Magic Trick for the Enterprise
+> Talk by Markus Walther, AXA DevCon, June 4, 2024 @ Winterthur, Switzerland
+
 ![Harry_Houdini](https://github.com/cloudspeech/houdini-talk/assets/850521/b515b10a-2313-4bd9-9ed4-9e88a2e9f2d1)
 
 ## Who was Houdini?
