@@ -278,7 +278,7 @@ in the components' HTML, you could escape the impossible situation...
 And there's this other hot frontend hype, signals, for fine-grained
 reactive updating over time. Can we please have that too?
 
-Step 1: Wish yourself <`sig-nal>`, which knows how to apply updates to a
+Step 1: Wish yourself <`sig-nal>`, which knows how to react and apply updates to a
 certain place in your HTML.
 
 Step 2: add attributes.
