@@ -275,7 +275,8 @@ German page that opens.
 
 Then they use the language selector to switch to English or whatever.
 
-And _then_ they really hate the wait while the page reloads.
+And _then_ they _really_ hate you because they need to wait while the
+page loads _again_.
 
 Your boss yells: "no reload, but don't you dare and change anything else".
 
