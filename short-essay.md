@@ -345,7 +345,7 @@ This is Houdini's trick at it's peak. Pure no-build goodness,
 
 I am not living under a rock.
 
-Of course I know about blog posts like that one from the creator of Svelte:
+Of course I know about blog posts like that one from the creator of Svelte,
 [Rich Harris: Why I don't use web
 components](https://dev.to/richharris/why-i-don-t-use-web-components-2cia).
 
