@@ -71,11 +71,12 @@ How? I'll show you now.
 ### 1. UI components
 
 Most people know this one already - a design system is good for enterprise
-brand identity.
+brand identity and includes UI components like buttons, form input
+elements, date pickers etc.
 
 AXA's design system is open source and built on web
-components since 2019: 
-(AXA Pattern Library)[https://axa-ch-webhub-cloud.github.io/plib-feature/develop/?path=/story/welcome--to-pattern-library]
+components since 2019. See
+[AXA Pattern Library](https://axa-ch-webhub-cloud.github.io/plib-feature/develop/?path=/story/welcome--to-pattern-library).
 
 And they are live on every page of axa.ch.
 
