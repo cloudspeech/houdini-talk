@@ -156,8 +156,8 @@ That snippet means:
 load that big fat bundle _only_ when the user
 scrolled down _so much_ that script-with-a-dash is visible.
 
-Step 4: now do-it-yourself, define the new behaviour &mdash; and just that,
-please, keep it simple &mdash; in plain old JavaScript:
+Step 4: now do-it-yourself, _define_ the new behaviour. Keep it
+simple. Use plain old JavaScript:
 
 ```js
 class ScriPt extends HTMLElement {
@@ -178,7 +178,7 @@ customElements.define("scri-pt", ScriPt);
 Aaand... in just 11 lines of code, Houdini's escape is perfect, because
 script-with-a-dash does the trick!
 
-To see this live in production &mdash; under the alias axa-script,&mdash; visit _any_ [axa.ch](https://axa.ch) web page.
+To see a production version of this live &mdash; under the alias axa-script,&mdash; visit _any_ [axa.ch](https://axa.ch) web page.
 
 ### 3. Microfrontends
 
