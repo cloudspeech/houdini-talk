@@ -102,7 +102,7 @@ Therefore, let's move on to the next situation.
 Your boss tells you to make things load faster, because the Google
 rating dropped...
 
-"Oh, and can you please make it happen by tomorrow?"
+"Oh", he says, "and can you please make it happen by tomorrow?"
 
 But you don't own
 the pages, hundreds of kilobytes of JavaScript and CSS assets must
@@ -113,25 +113,33 @@ which _also_ have to stay in place.
 
 Should you give up, or can you escape the impossible situation? 
 
-Of course, you can escape &mdash; use Houdini's trick!
+Of course, you can escape!
 
-Step 1: wish yourself a new HTML tag `<scri-pt>` called script-with-a-dash with new
-behaviour. Here we want to delay loading an asset until when the
+Just use Houdini's trick!
+
+Step 1: wish yourself a new HTML tag called script-with-a-dash
+(`<scri-pt>`) with new
+behaviour.
+
+Here we want to delay loading an asset until when the
 browser is idle, or when that part of the page becomes visible because
 you scroll down.
 
-Step 2: decide on the attributes to control that
-new behaviour. `when` reads nice as an attribute name:
+Step 2: invent your own attributes to control that
+new behaviour.
+
+`when` reads nice as an attribute name here, "script
+when visible, script when idle":
 
 ```html
 <scri-pt when="visible">...</scri-pt>
 <scri-pt when="idle">...</scri-pt>
 ```
 
-Step 3: compose your HTML as a mix of old tags and your new one.
+Step 3: compose your HTML as a mix of old tags and the new one.
 
 Because nothing loads automatically inside a `<template>` tag, we can
-wrap the things to load with it and then put everything _inside_ script-with-a-dash:
+wrap the things to load with a template and then put everything _inside_ script-with-a-dash:
 
 ```html
 <scri-pt when="visible">
@@ -142,9 +150,9 @@ wrap the things to load with it and then put everything _inside_ script-with-a-d
 ```
 
 This snippet means: load that big fat bundle only when the user
-scrolled down so that script-with-a-dash is visible.
+scrolled down so much that script-with-a-dash is visible.
 
-Step 4: do-it-yourself, define the new behaviour &mdash; and nothing else,
+Step 4: do-it-yourself, define the new behaviour &mdash; and just that,
 please &mdash; in plain old JavaScript:
 
 ```js
