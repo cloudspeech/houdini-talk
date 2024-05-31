@@ -268,24 +268,37 @@ It's _live_ on [axa.ch](https://axa.ch) pages, under the alias webhub-pod.
 
 ### 4. Internationalization
 
-Imagine customer research has found that expats hate full-page reloads
-to switch languages when emailed marketing links are in German. You
-are tasked to redo internationalization, but leave everything else
-intact. And no performance regression, please.
+Imagine customer research has found that some users hate you.
+
+They click on that link in their email, and don't understand the
+German page that opens.
+
+And right now that means a full page reload to switch to English or
+whatever.
+
+Your boss yells "no reload", but "don't change anything else".
+
+Oh, "and no performance regression, please."
 
 Impossible situation again, or not?
 
-How about... step 1: wish yourself `<trans-late>`, which knows how to
-translate text when the page language changes.
+How about... a little inspiration from Mister Houdini?
 
-Then step 2: no attributes needed, because it depends on the page
-language
+Step 1: wish yourself `<trans-late>`.
+
+A web component which knows how to translate text when the page language changes.
+
+Then step 2: no attributes needed.
+
+Why? Because we can make it depend on the page language:
 
 ```html
 <html lang="en">
 ```
 
-Step 3: compose:
+Changing _that_ requires 1 line of JavaScript in the language selector.
+
+Moving on to Step 3: compose:
 
 ```html
 <trans-late>Houdini's Magic Trick for the Enterprise
@@ -296,7 +309,7 @@ Step 3: compose:
 Anything under template is not rendered by the browser, so we're fine
 visually. The HTML speaks for itself.
 
-Step 4: do-it-yourself, define trans-late in JavaScript.
+Finally, Step 4: do-it-yourself, define trans-late in JavaScript.
 
 ```js
 const textNodes = new Map();
@@ -335,7 +348,23 @@ class TransLate extends HTMLElement {
 customElements.define("trans-late", TransLate);
 
 ```
-28 lines of easy-to-understand JavaScript for Houdini's trick are enough here.
+Yes, that's all! 28 lines of easy-to-understand JavaScript for
+Houdini's trick are enough here.
+
+Did you notice something?
+
+A new twist of Houdini's trick, the self-vanishing web component!
+
+At the end, trans-dash-late _replaces_ itself _with_ the text itself.
+
+The trick is to keep a pointer to that text node before you vanish.
+
+Then, when the page language changes, we just update all the nodes,
+and bingo &mdash; no page reloads!
+
+The take-home message is this:
+
+You are in full control of your web component's behaviour, how cool is that!
 
 ### 5. Server-Side Rendering for the Enterprise
 
