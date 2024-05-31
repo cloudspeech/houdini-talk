@@ -78,7 +78,7 @@ AXA's design system is open source and built on web
 components since 2019. See
 [AXA Pattern Library](https://axa-ch-webhub-cloud.github.io/plib-feature/develop/?path=/story/welcome--to-pattern-library).
 
-And they are live on every page of [axa.ch](view-source:https://axa.ch).
+And they are live on every page of [axa.ch](https://axa.ch).
 
 Houdini's trick worked there. Many enterprises do this nowadays. Let's
 move on.
@@ -141,7 +141,7 @@ customElements.define("scri-pt", ScriPt);
 
 Aaand... in just 11 lines of code, Houdini's escape is perfect!
 
-See a production version live on [axa.ch](view-source:https://axa.ch) web pages under the nickname axa-script.
+See a production version live on [axa.ch](https://axa.ch) web pages under the nickname axa-script.
 
 ### 3. Microfrontends
 
@@ -182,7 +182,7 @@ Step 4: do-it-yourself, define micro-frontend in JavaScript.
 
 I will spare you the details, but it's only 3.4 kiloBytes compressed.
 
-See it live on [axa.ch](view-source:https://axa.ch) pages under the nickname webhub-pod.
+See it live on [axa.ch](https://axa.ch) pages under the nickname webhub-pod.
 
 ### 4. Internationalization
 
