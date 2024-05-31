@@ -190,7 +190,7 @@ axa-script,&mdash; just visit _any_ [axa.ch](https://axa.ch) page.
 
 ### 3. Situation: Microfrontends
 
-The idea of Microfrontends in a nutshell is this:
+Microfrontends boil down to one simple idea:
 
 > embed apps in HTML.
 
