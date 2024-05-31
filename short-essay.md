@@ -3,17 +3,17 @@
 
 ![Harry_Houdini](https://github.com/cloudspeech/houdini-talk/assets/850521/b515b10a-2313-4bd9-9ed4-9e88a2e9f2d1)
 
-## Who was Houdini?
+## I am Markus, but Who was Houdini?
 
 Harry Houdini was a professional American magician and escape
 artist.
 
-He was famous at the start of the 20th century for his stunts in which
+He was famous at the start of the last century for his stunts in which
 he invariably escaped impossible-looking situations.
 
 In the [Washington DC prison
 escape](https://parkviewdc.com/2010/10/01/houdinis-escape-from-the-10th-precinct/)
-of January 1, 1906 it took him all of 18 minutes to defeat his
+of 19-oh-6 it took him all of 18 minutes to defeat his
 handcuffs, open 5 locks of his cell, and get his clothes from the
 neighbouring cell.
 
@@ -21,9 +21,13 @@ neighbouring cell.
 
 reads the caption of his photo.
 
-## What is Enterprise?
+## And What is Enterprise?
 
-Enterprise IT serves the needs of a large business organization &mdash; an enterprise &mdash; not just an individual user. Things have grown over the years, one has to protect against hostile actors from outside, auditing requirements need to be met, users have access rights and restrictions. 
+Enterprise IT serves the needs of a large business organization &mdash; an enterprise &mdash; not just an individual user.
+
+Things have grown over the years, one has to protect against hostile
+actors from outside, auditing requirements need to be met, users have
+access rights and restrictions.  
 
 For a frontend software engineer working in Enterprise, terms like
 stonewalls, chains, prison feel familiar - your hands are often tied,
@@ -32,41 +36,44 @@ show must go on and your web site must be up and running 24/7.
 
 Where's Houdini in that situation?
 
-### Enterprise Frontend
+### What is Enterprise Frontend like?
 
-Frontend deals with HTML - structure, 'what is what' -, CSS - styling, 'how it looks', and JavaScript - interactivity, 'how it responds'.
+As everybody knows, frontend deals with HTML - the structure, 'what is what' -, CSS - the
+styling, 'how it looks', and JavaScript - the interactivity, 'how it responds'.
 
-Typical enterprise restrictions:
+Now typical enterprise restrictions are:
 
-- traditional, HTML-heavy web pages, not SPA/PWA
+- traditional, web pages full of HTML dominate. __Not__ SPAs, __not__ PWAs.
 - you don't own the whole page
 - you can't run JavaScript on the server
 - SEO is crucial
 
-Out goes:
+So, out goes:
 
-- most frontend frameworks
+- most frontend frameworks, and
 - whole-page performance optimization
 
 Houdini, please help!
 
-## The Magic Trick
+## Here comes The Magic Trick
 
 Whenever you're stuck in yet another impossible Enterprise situation,
 do this:
 
 > write a web component!
 
-That's the escape, that's Houdini's magic trick for the enterprise,
-you can do it every single time.
+That's it, that's the escape, that's Houdini's magic trick for the enterprise,
+you can do it basically every single time.
 
 &lt;web-component&gt;s are HTML tags with a dash in the name that you
 define yourself with a little JavaScript. All major browsers support
 them.
 
-Since the foundation is always HTML, we can always use that trick.
+And since the foundation is always HTML, we can always use that trick.
 
-How? I'll show you now.
+How?
+
+I'll show you now.
 
 ## Five typical situations where the trick works
 
