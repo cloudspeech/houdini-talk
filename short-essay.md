@@ -375,7 +375,7 @@ The take-home message is this:
 
 You are in _full_ control of your web component's behaviour, how cool is _that_?!!
 
-### 5. Server-Side Rendering for the Enterprise
+### 5. Situation: Server-Side Rendering for the Enterprise
 
 So you discover it's impossible to do Server-Side Rendering in your
 organization.
