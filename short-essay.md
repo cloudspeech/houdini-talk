@@ -358,13 +358,14 @@ But did you notice something?
 
 A new twist of Houdini's trick, the self-vanishing web component!
 
-At the end, trans-dash-late _replaces_ itself _with_ the text, the web
-component is gone.
+At the end, trans-dash-late _replaces_ itself _with_ the text,
 
-Now text is also a DOM node, so the trick is to keep a global reference to
-that node before you vanish.
+Unlike Houdini, I tell you the trick:
 
-Then, when the page language changes, we just update all the nodes,
+Text is also a DOM node, so we can store a global reference to it before we
+remove the web component.
+
+Then, when the page language changes, we just update all the stored nodes,
 and bingo &mdash; no page reloads!
 
 The take-home message is this:
