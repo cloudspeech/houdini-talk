@@ -206,20 +206,20 @@ After login they come back and only _then_ start the app.
 Others are of the type where you want to wait till all the markup is
 parsed, that is until DOM is loaded.
 
-How can you embed _all_ kinds of microfrontends in HTML?
+Now the crucial question is: How can you embed _all_ kinds of microfrontends in HTML?
 
-That's easy.
+You guessed it, that's easy.
 
 First, do step 1 again: wish yourself micro-dash-frontend
 (`<micro-frontend>`).
 
-A web component which knows how to embed any kind of app and start it.
+That is to say, a web component which knows how to embed any kind of app and start it.
 
 Step 2, add attributes.
 
 Use `type` to indicate which kind of microfrontend it is:
 
-for example `type="auth"` for authentication-first, or `type="dom-loaded"` and so on.
+for example use `type="auth"` for authentication-first, or `type="dom-loaded"` and so on.
 
 Step 3, compose:
 
@@ -248,11 +248,11 @@ I will spare you the details, but it's only 3-point-4 kiloBytes
 compressed.
 
 This is because Houdini's trick needs little code, if you think carefully about
-composition first.
+composition _first_.
 
-Each web component should only do one thing, and do it well.
+Each web component should only do _one_ thing, and do it well.
 
-Finally, you can see micro-dash-frontend live on [axa.ch](https://axa.ch) pages under the alias webhub-pod.
+Finally, see micro-dash-frontend for yourself, _live_ on [axa.ch](https://axa.ch) pages, under the alias webhub-pod.
 
 ### 4. Internationalization
 
