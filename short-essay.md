@@ -348,9 +348,9 @@ Of course I know about blog posts like that one from the creator of Svelte:
 [Rich Harris: Why I don't use web
 components](https://dev.to/richharris/why-i-don-t-use-web-components-2cia).
 
-But Enterprise has overwhelmingly voted with their feet:
+But Enterprise has overwhelmingly voted with their feet, see [arewebcomponentsathingyet.com](https://arewebcomponentsathingyet.com/):
 
-https://arewebcomponentsathingyet.com/
+<img width="479" alt="Screenshot 2024-05-31 at 13 37 48" src="https://github.com/cloudspeech/houdini-talk/assets/850521/f9fc74a7-2c7c-4817-85c8-179cb9782575">
 
 So haters gonna hate, but they can't touch Houdini.
 
