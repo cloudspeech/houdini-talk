@@ -100,21 +100,28 @@ Therefore, let's move on to the next situation.
 ### 2. Situation: Slow Page Performance
 
 Your boss tells you to make things load faster, because the Google
-rating dropped... Oh, and can you make it happen by tomorrow? But you don't own
+rating dropped...
+
+Oh, and can you please make it happen by tomorrow?
+
+But you don't own
 the pages, hundreds of kilobytes of JavaScript and CSS assets must
-stay. Those assets are loaded via `<script>` and `<link>` tags,
-which also have to stay in place.
+stay.
+
+Those assets are loaded via `<script>` and `<link>` tags,
+which __also__ have to stay in place.
 
 Should you give up, or can you escape the impossible situation? 
 
-Of course, use Houdini's trick!
+Of course, you can escape &mdash; use Houdini's trick!
 
-Step 1: wish yourself a new HTML tag `<scri-pt>` with the ideal
-behaviour. Here, that means to delay loading an asset until when the
-browser is idle, or when that part of the page is visible.
+Step 1: wish yourself a new HTML tag `<scri-pt>` with new
+behaviour. Here we want to delay loading an asset until when the
+browser is idle, or when that part of the page becomes visible because
+you scroll down.
 
 Step 2: decide on the attributes to control that
-ideal behaviour. `when` reads nice here:
+ideal behaviour. `when` reads nice as an attribute name:
 
 ```html
 <scri-pt when="visible">...</scri-pt>
@@ -124,7 +131,7 @@ ideal behaviour. `when` reads nice here:
 Step 3: compose your HTML as a mix of old tags and your new one.
 
 Because nothing loads automatically inside a `<template>` tag, we can have simple markup
-like this:
+like this __inside__ script-with-a-dash:
 
 ```html
 <scri-pt when="visible">
@@ -134,7 +141,7 @@ like this:
 </scri-pt>
 ```
 
-Step 4: do-it-yourself, define the behaviour &mdash; and nothing else,
+Step 4: do-it-yourself, define the new behaviour &mdash; and nothing else,
 please &mdash; in plain old JavaScript:
 
 ```js
