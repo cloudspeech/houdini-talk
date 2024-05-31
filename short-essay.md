@@ -191,22 +191,33 @@ axa-script,&mdash; just visit _any_ [axa.ch](https://axa.ch) page.
 ### 3. Microfrontends
 
 The idea of Microfrontends is to embed apps inside plain old HTML
-pages. If you do it right, teams can then deploy and maintain those
+pages.
+
+If you do it right, teams can then deploy and maintain those
 apps independent of your site releases, which is a huge win.
 
-But not all apps are alike, for example some need to navigate to a
-login page first for user authentication, then come back and start the
-app. Others are of the type where you want to wait till all the HTML
-is parsed, that is until DOM is loaded.
+But not all apps are alike.
 
-How can you model such microfrontend embedding in Enterprise HTML?
+For example, some need to navigate to a
+login page first for user authentication.
 
-Easy, step 1 again: wish yourself `<micro-frontend>`, which knows how
+After login they come back and only _then_ start the app.
+
+Others are of the type where you want to wait till all the markup is
+parsed, that is until DOM is loaded.
+
+How can you model such microfrontend embedding in HTML?
+
+Easy.
+
+Step 1 again: wish yourself `<micro-frontend>`, which knows how
 to embed a microfrontend and start it.
 
 Step 2, add attributes.
 
-Use `type` to indicate which kind of microfrontend it is: `type="auth"` or `type="dom-loaded"` etc.
+Use `type` to indicate which kind of microfrontend it is:
+
+`type="auth"` for authentication first, or `type="dom-loaded"` and so on.
 
 Step 3, compose:
 
@@ -214,20 +225,26 @@ Step 3, compose:
 <micro-frontend type="dom-loaded">
   <scri-pt when="visible" for="parentNode">
     <template>
-      <script type="module" src="my-big-app-bundle.js"></script>
+      <script type="module" src="big-app-bundle.js"></script>
     </template>
   </scri-pt>
 </micro-frontend>
 ```
 
-Notice how we did not define app-loading, but reused scri-pt?
+That snippet means: place a microfrontend of type dom-loaded here, to
+be started once this place is visible and the big app bundle has
+loaded.
+
+Notice how we did not have to define app-loading, but could reuse
+script-with-a-dash?
+
 That's the power of HTML composition at work!
 
-Step 4: do-it-yourself, define micro-frontend in JavaScript.
+Step 4: do-it-yourself, define micro-dash-frontend in JavaScript.
 
-I will spare you the details, but it's only 3.4 kiloBytes compressed.
+I will spare you the details, but it's only 3-point-4 kiloBytes compressed.
 
-See it live on [axa.ch](https://axa.ch) pages under the nickname webhub-pod.
+You can see it live on [axa.ch](https://axa.ch) pages under the alias webhub-pod.
 
 ### 4. Internationalization
 
