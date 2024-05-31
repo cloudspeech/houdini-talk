@@ -99,31 +99,31 @@ Therefore, let's move on to the next situation.
 
 ### 2. Situation: Slow Page Performance
 
-Your boss tells you to make things load faster, because Google's
-rating dropped... Oh, and can it be done tomorrow? But you don't own
+Your boss tells you to make things load faster, because the Google
+rating dropped... Oh, and can you make it happen by tomorrow? But you don't own
 the pages, hundreds of kilobytes of JavaScript and CSS assets must
-stay. Those assets are loaded via `<script>`, `<link>` tags,
-which have to stay in place.
+stay. Those assets are loaded via `<script>` and `<link>` tags,
+which also have to stay in place.
 
 Should you give up, or can you escape the impossible situation? 
 
-Use Houdini's trick!
+Of course, use Houdini's trick!
 
 Step 1: wish yourself a new HTML tag `<scri-pt>` with the ideal
 behaviour. Here, that means to delay loading an asset until when the
 browser is idle, or when that part of the page is visible.
 
 Step 2: decide on the attributes to control that
-ideal behaviour. `when` reads nice:
+ideal behaviour. `when` reads nice here:
 
 ```html
 <scri-pt when="visible">...</scri-pt>
 <scri-pt when="idle">...</scri-pt>
 ```
 
-Step 3: compose HTML as mix of old tags and your new tag.
+Step 3: compose your HTML as a mix of old tags and your new one.
 
-Nothing loads inside a `<template>` tag, so we can have simple markup
+Because nothing loads inside a `<template>` tag, we can have simple markup
 like this:
 
 ```html
@@ -155,7 +155,7 @@ customElements.define("scri-pt", ScriPt);
 
 Aaand... in just 11 lines of code, Houdini's escape is perfect!
 
-See a production version live on [axa.ch](https://axa.ch) web pages under the nickname axa-script.
+To see this live in production under the nickname axa-script, visit any [axa.ch](https://axa.ch) web page.
 
 ### 3. Microfrontends
 
