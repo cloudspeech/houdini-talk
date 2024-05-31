@@ -273,11 +273,11 @@ Imagine customer research has found that some users hate you.
 They click on that link in their email, and don't understand the
 German page that opens.
 
-They use the language selector.
+They use the language selector to switch to English or whatever.
 
-And they hate the wait while the page reloads in English or whatever.
+And then they hate the wait while the page reloads.
 
-Your boss yells "no reload, but don't you change anything else".
+Your boss yells: "no reload, but don't you dare and change anything else".
 
 "And no performance regression, please."
 
@@ -308,7 +308,9 @@ Moving on to Step 3: compose:
 ```
 
 Anything under template is not rendered by the browser, so we're fine
-visually. The HTML is so clear, it speaks for itself.
+visually.
+
+The HTML is so clear, it speaks for itself.
 
 Finally, Step 4: do-it-yourself, define trans-late in JavaScript.
 
@@ -352,14 +354,15 @@ customElements.define("trans-late", TransLate);
 Yes, that's all! 28 lines of easy-to-understand JavaScript for
 Houdini's trick are enough here.
 
-Did you notice something?
+But did you notice something?
 
 A new twist of Houdini's trick, the self-vanishing web component!
 
-At the end, trans-dash-late _replaces_ itself _with_ the text itself.
+At the end, trans-dash-late _replaces_ itself _with_ the text, the web
+component is gone.
 
-Text is also a DOM node, so the trick is to keep a reference to
-that node before you vanish. 
+Now text is also a DOM node, so the trick is to keep a global reference to
+that node before you vanish.
 
 Then, when the page language changes, we just update all the nodes,
 and bingo &mdash; no page reloads!
