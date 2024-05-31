@@ -122,14 +122,15 @@ Step 1: wish yourself a new HTML tag called script-with-a-dash
 behaviour.
 
 Here we want to delay loading an asset until the
-browser is idle, has _time_, or until you scroll down _so much_ so that the
+browser is idle. Idle means the browser is not busy doing more
+important things like painting pixels. Or we want to delay loading until you scroll down _so much_ so that the
 new tag becomes visible.
 
 Step 2: invent your own attributes to control that
 new behaviour.
 
-`when` reads nice as an attribute name here, "script
-when visible, script when idle":
+`when` is a nice attribute name here, because "script
+when visible, script when idle" sound good:
 
 ```html
 <scri-pt when="visible">...</scri-pt>
