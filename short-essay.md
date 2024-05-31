@@ -99,7 +99,7 @@ Therefore, let's move on to the next situation.
 
 ### 2. Situation: Slow Page Performance
 
-Your boss tells you to make things load faster, because the Google
+So your boss tells you to make things load faster, because the Google
 rating dropped...
 
 "Oh", he says, "and can you please make it happen by tomorrow?"
@@ -121,9 +121,9 @@ Step 1: wish yourself a new HTML tag called script-with-a-dash
 (`<scri-pt>`) with new
 behaviour.
 
-Here we want to delay loading an asset until when the
-browser is idle, or when that part of the page becomes visible because
-you scroll down.
+Here we want to delay loading an asset until the
+browser is idle, has _time_, or until you scroll _down_ so that the
+new tag becomes visible.
 
 Step 2: invent your own attributes to control that
 new behaviour.
@@ -136,7 +136,7 @@ when visible, script when idle":
 <scri-pt when="idle">...</scri-pt>
 ```
 
-Step 3: compose your HTML as a mix of old tags and the new one.
+Step 3: compose your markup as a mix of old tags and the new one.
 
 Because nothing loads automatically inside a `<template>` tag, we can
 wrap the things to load with a template and then put everything _inside_ script-with-a-dash:
@@ -149,13 +149,13 @@ wrap the things to load with a template and then put everything _inside_ script-
 </scri-pt>
 ```
 
-This snippet means:
+That snippet means:
 
 load that big fat bundle _only_ when the user
 scrolled down _so much_ that script-with-a-dash is visible.
 
 Step 4: do-it-yourself, define the new behaviour &mdash; and just that,
-please &mdash; in plain old JavaScript:
+please, keep it simple &mdash; in plain old JavaScript:
 
 ```js
 class ScriPt extends HTMLElement {
