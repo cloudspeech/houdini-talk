@@ -123,7 +123,7 @@ ideal behaviour. `when` reads nice here:
 
 Step 3: compose your HTML as a mix of old tags and your new one.
 
-Because nothing loads inside a `<template>` tag, we can have simple markup
+Because nothing loads automatically inside a `<template>` tag, we can have simple markup
 like this:
 
 ```html
@@ -134,8 +134,8 @@ like this:
 </scri-pt>
 ```
 
-Step 4: do-it-yourself, define the behaviour (and nothing else) in
-plain old JavaScript:
+Step 4: do-it-yourself, define the behaviour &mdash; and nothing else,
+please &mdash; in plain old JavaScript:
 
 ```js
 class ScriPt extends HTMLElement {
@@ -153,7 +153,8 @@ class ScriPt extends HTMLElement {
 customElements.define("scri-pt", ScriPt);
 ```
 
-Aaand... in just 11 lines of code, Houdini's escape is perfect!
+Aaand... in just 11 lines of code, Houdini's escape is perfect,
+script-with-a-dash does the trick!
 
 To see this live in production under the nickname axa-script, visit any [axa.ch](https://axa.ch) web page.
 
