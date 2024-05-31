@@ -436,14 +436,18 @@ Use `hydrate` to express your interactivity:
 
 ```html
 <sig-nal hydrate>
-      { /* JavaScript object expressing to what to react
-           and how to update */
+      { /* JavaScript object */
       }
 </sig-nal>
 ```
 
-That JavaScript object will express to what we have to react
-and how we should update
+That JavaScript object will pair names of DOM nodes
+with reactions.
+
+You might react to user input, for example clicks, or
+when a signal value is updated.
+
+We see an example right now, in
 
 Step 3: compose
 
@@ -466,6 +470,19 @@ Step 3: compose
       </div>
     </template>
 ```
+
+That reads as follows:
+
+when the counter value updates, update the text
+content of that `<div>`. It starts out at 3.
+
+When you click on the plus-labelled button,
+increment the signal named counter. 3 becomes 4, and so on.
+
+Likewise, decrement when hitting
+that minus-labelled button. 3 becomes 2, and so on.
+
+It's this short, but it will work without any compiler, I promise.
 
 Step 4: do-it-yourself, define sig-nal in JavaScript. Under 1 KB
 compressed, that's all you need. Open-sourced [here](https://github.com/cloudspeech/sig-nal).
