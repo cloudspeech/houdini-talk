@@ -8,14 +8,52 @@
     <title>Houdini talk</title>
     <script type="module" src="./src/scri-pt.js"></script>
     <style>
+      :root {
+      --bg-color: #615946;
+      --fg-color: #ffdcb4;
+      }
+      
+      body {
+      margin: 0;
+      padding: 0;
+      background-image: url(houdini.webp);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-blend-mode: color-burn;
+      background-color: var(--bg-color);
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      color: var(--fg-color);
+      font-family: monospace;
+      font-size: 24px;
+      }
+      
       select#language {
       position: fixed;
       top: 1em;
       right: 1em;
+      outline: none;
+      background: transparent;
+      color: var(--fg-color);
+      border-color: var(--fg-color);
+      }
+
+      h1 {
+      width: 80%;
+      margin: 10% auto 0 auto;
+      text-align: center;
+      font-size: 5em;
+      }
+
+      h5 {
+      margin: 5em auto 0 auto;
+      text-align: center;
+      font-size: .5em;
       }
     </style>
   </head>
-  <body>
+  <body onkeydown="let offset=(event.keyCode===32||event.keyCode===39)?1:-1;location.pathname=`slide-${Math.max(0,(location.pathname.replace(/\D/g,'')|0)+offset)}.html`">
     <select aria-label="select language" id="language" onchange="document.documentElement.setAttribute('lang', this.value)">
       <option selected value="en">EN</option>
       <option value="de">DE</option>
@@ -33,6 +71,6 @@
       </trans-late>
     </h1>
 
-    <h2>Markus Walther, AXA DevCon, June 4, 2024</h2>
+    <h5>Markus Walther, AXA DevCon, June 4, 2024</h5>
   </body>
 </html>

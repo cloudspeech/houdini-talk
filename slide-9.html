@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="description" content="Houdini talk about the power of web components for Enterprise frontend"/>
+    <meta name="theme-color" content="#ffffff">
+    <title>Houdini talk</title>
+    <script type="module" src="./src/scri-pt.js"></script>
+    <script type="module">let e={},t=[(e,t)=>e[t],(e,t)=>e.hasAttribute(t),(e,t)=>e.getAttribute(t),e=>1];class s extends WeakMap{use=(e,t={})=>this.get(e)||this.set(e,t).get(e)}let i={},n=new s,a=new s,l=new s,r=(e,t)=>"number"===t?0|e:e;class h{#e;#t=[];#s=0;constructor(e){this.#e=e}#i=()=>1==++this.#s&&queueMicrotask((()=>{this.#t.map((e=>e())),this.#s=0}));get value(){return this.#e}set value(e){this.#e=e,this.#i()}onChange(e,t){t&&e(this.#e),this.#t.push((()=>e(this.#e)))}when(e,t=[]){let s=new h(e(this.#e));return this.onChange((t=>s.value=e(t))),t.map((e=>e.onChange(this.#i))),s}}let o={},u={};class c extends HTMLElement{#n=(e,t=this)=>t.getAttribute(e);#a=(e,s)=>{let i=e[0],n=e.slice(1),l=this.#n(e,s),r=".?!@".indexOf(i);if(r>=0){let i=t[r](s,n);a.use(s)[e]={init:i,name:l},queueMicrotask((()=>s.removeAttribute(e)))}};static Signal=h;static hydrate=(t,s,r)=>{let h="string"==typeof t?i[t]:t.map((e=>document.querySelector(e).shadowRoot));for(let t of h)if(!t.h){t.h=1;let i=l.get(t)||e;for(let l in s){let h=n.get(t)[l],u=a.get(h);if(u){let t=s[l];for(let s in t){let n=t[s];s in o&&(n=o[s](n));let{name:a,init:l}=u[s.toLowerCase()]||e,{signal:c,type:d,id:g}=a&&i[a]||e;r instanceof Object&&g&&c&&(r[g]=c);let m=s.slice(1),f=e=>n({type:d,name:m,signal:c,signals:i,init:l,domNode:h,e:e});a&&(s.startsWith("@")?h.addEventListener(m,f):queueMicrotask(f))}}}}};static plugin=(e,t)=>(o[e]=t)&&u[e]&&u[e]();static usable=(e,t=[])=>{for(let s of e)o[s]||t.push(new Promise((e=>u[s]=e)));return Promise.all(t)};static render=e=>({domNode:t,name:s})=>t[s]="function"==typeof e?e():e;static rerender=(e,t=!0)=>e.signal.onChange((t=>c.render(t)(e)),t);connectedCallback(){let e=this[this.#n("for")||"parentNode"],t=this.getRootNode(),s=this.#n("new"),a=s||this.#n("ref")||crypto.randomUUID(),o=this.#n("type"),{id:u,textContent:c}=this;(i[a]=i[a]||[]).push(t),n.use(t)[a]=e,s&&(l.use(t)[a]={signal:new h(r(c,o)),type:o,id:u});for(let t of e.getAttributeNames())this.#a(t,e);null!==this.#n("hydrate")&&(new Function(`let{hydrate,render,rerender}=customElements.get('sig-nal');hydrate('${a}',${c})`)(),c=""),this.className||this.replaceWith(c)}}customElements.define("sig-nal",c);
+</script>
+    <style>
+      :root {
+      --bg-color: #615946;
+      --fg-color: #ffdcb4;
+      }
+      
+      body {
+      margin: 0;
+      padding: 0;
+      background-image: url(houdini.webp);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-blend-mode: color-burn;
+      background-color: var(--bg-color);
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      color: var(--fg-color);
+      font-family: monospace;
+      font-size: 24px;
+      }
+      
+      select#language {
+      position: fixed;
+      top: 1em;
+      right: 1em;
+      outline: none;
+      background: transparent;
+      color: var(--fg-color);
+      border-color: var(--fg-color);
+      }
+
+      h1 {
+      width: 80%;
+      margin: .5em auto 0 auto;
+      text-align: center;
+      font-size: 3em;
+      }
+
+      h5 {
+      margin: 5em auto 0 auto;
+      text-align: center;
+      font-size: .5em;
+      }
+
+      img {
+      height: 80%;
+      display: block;
+      margin: 1em auto;
+      }
+
+      ul, ol {
+      display: flex;
+      flex-direction: column;
+      margin-left: 3em;
+      font-size: 2em;
+      }
+
+      li {
+      color: #b571f4;
+      margin-bottom: 1em
+      }
+
+      li:first-child {
+      margin-top: 1em
+      }
+
+      blockquote p {
+      margin: 1em auto;
+      width: fit-content;
+      font-size: 1.5em
+      }
+      
+    </style>
+  </head>
+  <body onkeydown="let offset=(event.keyCode===32||event.keyCode===39)?1:-1;location.pathname=`slide-${Math.max(0,(location.pathname.replace(/\D/g,'')|0)+offset)}.html`">
+
+    <select aria-label="select language" id="language" onchange="document.documentElement.setAttribute('lang', this.value)">
+      <option selected value="en">EN</option>
+      <option value="de">DE</option>
+    </select>
+
+    <scri-pt when="idle">
+      <template>
+	<script type="module" src="./src/trans-late.js"></script>
+	<link rel="stylesheet" href="./styles.css"/>
+      </template>
+    </scri-pt>
+
+    <h1>2. Slow page performance</h1>
+    <ul>
+      <li>Google rating dropped</li>
+      <li>make it load faster!</li>
+      <li><s>drop hundreds of kB</s></li>
+      <li>&lt;script&gt;,&lt;link&gt; must stay</li>
+    </ul>
+  </body>
+</html>

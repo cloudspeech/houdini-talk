@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="description" content="Houdini talk about the power of web components for Enterprise frontend"/>
+    <meta name="theme-color" content="#ffffff">
+    <title>Houdini talk</title>
+    <script type="module" src="./src/scri-pt.js"></script>
+    <script type="module">let e={},t=[(e,t)=>e[t],(e,t)=>e.hasAttribute(t),(e,t)=>e.getAttribute(t),e=>1];class s extends WeakMap{use=(e,t={})=>this.get(e)||this.set(e,t).get(e)}let i={},n=new s,a=new s,l=new s,r=(e,t)=>"number"===t?0|e:e;class h{#e;#t=[];#s=0;constructor(e){this.#e=e}#i=()=>1==++this.#s&&queueMicrotask((()=>{this.#t.map((e=>e())),this.#s=0}));get value(){return this.#e}set value(e){this.#e=e,this.#i()}onChange(e,t){t&&e(this.#e),this.#t.push((()=>e(this.#e)))}when(e,t=[]){let s=new h(e(this.#e));return this.onChange((t=>s.value=e(t))),t.map((e=>e.onChange(this.#i))),s}}let o={},u={};class c extends HTMLElement{#n=(e,t=this)=>t.getAttribute(e);#a=(e,s)=>{let i=e[0],n=e.slice(1),l=this.#n(e,s),r=".?!@".indexOf(i);if(r>=0){let i=t[r](s,n);a.use(s)[e]={init:i,name:l},queueMicrotask((()=>s.removeAttribute(e)))}};static Signal=h;static hydrate=(t,s,r)=>{let h="string"==typeof t?i[t]:t.map((e=>document.querySelector(e).shadowRoot));for(let t of h)if(!t.h){t.h=1;let i=l.get(t)||e;for(let l in s){let h=n.get(t)[l],u=a.get(h);if(u){let t=s[l];for(let s in t){let n=t[s];s in o&&(n=o[s](n));let{name:a,init:l}=u[s.toLowerCase()]||e,{signal:c,type:d,id:g}=a&&i[a]||e;r instanceof Object&&g&&c&&(r[g]=c);let m=s.slice(1),f=e=>n({type:d,name:m,signal:c,signals:i,init:l,domNode:h,e:e});a&&(s.startsWith("@")?h.addEventListener(m,f):queueMicrotask(f))}}}}};static plugin=(e,t)=>(o[e]=t)&&u[e]&&u[e]();static usable=(e,t=[])=>{for(let s of e)o[s]||t.push(new Promise((e=>u[s]=e)));return Promise.all(t)};static render=e=>({domNode:t,name:s})=>t[s]="function"==typeof e?e():e;static rerender=(e,t=!0)=>e.signal.onChange((t=>c.render(t)(e)),t);connectedCallback(){let e=this[this.#n("for")||"parentNode"],t=this.getRootNode(),s=this.#n("new"),a=s||this.#n("ref")||crypto.randomUUID(),o=this.#n("type"),{id:u,textContent:c}=this;(i[a]=i[a]||[]).push(t),n.use(t)[a]=e,s&&(l.use(t)[a]={signal:new h(r(c,o)),type:o,id:u});for(let t of e.getAttributeNames())this.#a(t,e);null!==this.#n("hydrate")&&(new Function(`let{hydrate,render,rerender}=customElements.get('sig-nal');hydrate('${a}',${c})`)(),c=""),this.className||this.replaceWith(c)}}customElements.define("sig-nal",c);
+</script>
+    <style>
+      :root {
+      --bg-color: #615946;
+      --fg-color: #ffdcb4;
+      }
+      
+      body {
+      margin: 0;
+      padding: 0;
+      background-image: url(houdini.webp);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-blend-mode: color-burn;
+      background-color: var(--bg-color);
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      color: var(--fg-color);
+      font-family: monospace;
+      font-size: 24px;
+      }
+      
+      select#language {
+      position: fixed;
+      top: 1em;
+      right: 1em;
+      outline: none;
+      background: transparent;
+      color: var(--fg-color);
+      border-color: var(--fg-color);
+      }
+
+      h1 {
+      width: 80%;
+      margin: 10% auto 0 auto;
+      text-align: center;
+      font-size: 3em;
+      }
+
+      h5 {
+      margin: 5em auto 0 auto;
+      text-align: center;
+      font-size: .5em;
+      }
+    </style>
+  </head>
+  <body onkeydown="let offset=(event.keyCode===32||event.keyCode===39)?1:-1;location.pathname=`slide-${Math.max(0,(location.pathname.replace(/\D/g,'')|0)+offset)}.html`">
+    <count-down style="margin: 5rem auto; box-shadow: 1px 2px 18px 4px var(--bg-color); transform: scale(.75)">
+      <template shadowrootmode="open">
+        <style>:host {
+	  display: table;
+	  color: violet;
+}
+table {
+    border-collapse: collapse
+}
+
+td, th {
+    position: relative;
+    font-family: monospace;
+    font-weight: 700;
+    font-size: 5em;
+    min-width: 2.2em;
+    text-align: center;
+    padding-right: 16px
+}
+
+td:last-child, th:last-child {
+    padding-left: 16px;
+    padding-right: 20px
+}
+
+th {
+    background: rgba(0,0,0,.8);
+    color: var(--bg-color);
+}
+
+td:not(:last-child):after,
+th:not(:last-child):after {
+    content: ':';
+    position: absolute;
+    right: -12px
+}
+
+.pyro {
+    color: transparent
+}
+
+.pyro > .before, .pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: -120px -218.66667px blue, 248px -16.66667px #00ff84, 190px 16.33333px #002bff, -113px -308.66667px #ff009d, -109px -287.66667px #ffb300, -50px -313.66667px #ff006e, 226px -31.66667px #ff4000, 180px -351.66667px #ff00d0, -12px -338.66667px #00f6ff, 220px -388.66667px #99ff00, -69px -27.66667px #ff0400, -111px -339.66667px #6200ff, 155px -237.66667px #00ddff, -152px -380.66667px #00ffd0, -50px -37.66667px #00ffdd, -95px -175.66667px #a6ff00, -88px 10.33333px #0d00ff, 112px -309.66667px #005eff, 69px -415.66667px #ff00a6, 168px -100.66667px #ff004c, -244px 24.33333px #ff6600, 97px -325.66667px #ff0066, -211px -182.66667px #00ffa2, 236px -126.66667px #b700ff, 140px -196.66667px #9000ff, 125px -175.66667px #00bbff, 118px -381.66667px #ff002f, 144px -111.66667px #ffae00, 36px -78.66667px #f600ff, -63px -196.66667px #c800ff, -218px -227.66667px #d4ff00, -134px -377.66667px #ea00ff, -36px -412.66667px #ff00d4, 209px -106.66667px #00fff2, 91px -278.66667px #000dff, -22px -191.66667px #9dff00, 139px -392.66667px #a6ff00, 56px -2.66667px #0099ff, -156px -276.66667px #ea00ff, -163px -233.66667px #00fffb, -238px -346.66667px #00ff73, 62px -363.66667px #0088ff, 244px -170.66667px #0062ff, 224px -142.66667px #b300ff, 141px -208.66667px #9000ff, 211px -285.66667px #ff6600, 181px -128.66667px #1e00ff, 90px -123.66667px #c800ff, 189px 70.33333px #00ffc8, -18px -383.66667px #00ff33, 100px -6.66667px #ff008c;
+  animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+}
+
+.pyro > .after {
+  animation-delay: 1.25s, 1.25s, 1.25s;
+  animation-duration: 1.25s, 1.25s, 6.25s;
+}
+
+@keyframes bang {
+  from {
+      box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white;
+  }
+}
+
+@keyframes gravity {
+  to {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+}
+
+@keyframes position {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%;
+  }
+
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
+</style>
+        <table>
+          <thead> <tr>
+              <th>dd</th>
+              <th>hh</th>
+              <th>mm</th>
+              <th>ss</th>
+              <th>ddd</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td .textContent="days"><sig-nal id="days" new="days">00</sig-nal></td>
+              <td .textContent="hours"><sig-nal id="hours" new="hours">00</sig-nal></td>
+              <td .textContent="minutes"><sig-nal id="minutes" new="minutes">01</sig-nal></td>
+              <td .textContent="seconds"><sig-nal id="seconds" new="seconds">00</sig-nal></td>
+              <td .textContent="hundredth"><sig-nal id="hundredth" new="hundredth">000</sig-nal></td>
+            </tr>
+          </tbody>
+        </table>
+        <div hidden .hidden="fireworks" class="pyro">
+          <sig-nal id="fireworks" new="fireworks" type="number">1</sig-nal>
+          <div class="before"></div>
+          <div class="after"></div>
+        </div>
+        <script type="module">
+      // import static class methods from <sig-nal> class
+      const { hydrate, rerender } = await customElements.whenDefined("sig-nal");
+
+      // set up module globals
+      let timer, signals = {}, last = [];
+
+      // hydrate signals gathered from HTML, en passant storing those signals
+      // (identified via the id="signalName" attribute in HTML) in the signals object
+      hydrate('hours', {
+      "days": { ".textContent": rerender},
+      "hours": { ".textContent": rerender},
+      "minutes": { ".textContent": rerender},
+      "seconds": { ".textContent": rerender},
+      "hundredth": { ".textContent": rerender},
+      "fireworks": { ".hidden": rerender},
+      }, signals);
+
+      // list parameters of each unit of the countdown: name, subtraction offset, highest state
+      const units = ['hundredth', 100, '900', 'seconds', 1, '59', 'minutes', 1, '59', 'hours', 1, '23', 'days', 1, '366'];
+
+      // count-down update function:
+      const update = () => {
+          // for all units from most frequently updated to least frequently updated:
+          for(let i = 0, n = units.length, unit, name, step, highest; i < n; i += 3) {
+              // fetch per-unit parameters
+              name = units[i];
+              step = units[i + 1];
+              highest = units[i + 2];
+              // count down this unit
+              unit = (signals[name].value | 0) - step;
+              // and remember its new value in the array of last-updated values
+              last[i / 3] = Math.abs(unit);
+              // format new value with the right amount of digits
+              signals[name].value = `00${unit}`.slice(-1 -(Math.log10(highest | 0) | 0));
+              // if new value not negative, stop here
+              if (unit >= 0) break;
+              // new value would have been negative, reset it to highest value for this unit ...
+              signals[name].value = highest;
+              // ... and loop to next unit
+          }
+          // did count down reach all-zero end state (sum up last-updated values to determine that state)?
+          if(last.reduce((a,b) => a + b, 0) === 0) {
+              // yes, stop counting down
+              clearInterval(timer);
+              // start fireworks
+              signals.fireworks.value = 0;
+              // after 30 s, stop it again
+              setTimeout(() => (signals.fireworks.value = 1), 30 * 1000);
+          }
+      };
+
+      // update count down every 100 milliseconds
+      timer = setInterval(update, 100);
+        </script>
+      </template>
+    </count-down>
+
+    <select aria-label="select language" id="language" onchange="document.documentElement.setAttribute('lang', this.value)">
+      <option selected value="en">EN</option>
+      <option value="de">DE</option>
+    </select>
+
+    <scri-pt when="idle">
+      <template>
+	<script type="module" src="./src/trans-late.js"></script>
+	<link rel="stylesheet" href="./styles.css"/>
+      </template>
+    </scri-pt>
+
+    <h1><trans-late>Houdini's Magic Trick for the Enterprise
+	<template lang="de">Houdini's Magischer Trick für Enterprise Frontend</template>
+      </trans-late>
+    </h1>
+
+    <h5>Markus Walther, AXA DevCon, June 4, 2024</h5>
+  </body>
+</html>
