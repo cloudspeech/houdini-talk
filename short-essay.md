@@ -3,7 +3,7 @@
 
 ![Harry_Houdini](https://github.com/cloudspeech/houdini-talk/assets/850521/b515b10a-2313-4bd9-9ed4-9e88a2e9f2d1)
 
-## I am Markus, but Who was Houdini?
+## I am Markus, but Who is Houdini?
 
 Harry Houdini was a professional American magician and escape
 artist.
@@ -343,7 +343,7 @@ class TransLate extends HTMLElement {
       translations[language] = text;
     });
     textNodes.set(textNode, translations);
-    this.replaceWith(textNode);
+    this.replaceWith(textNode); // vanish!
   }
 }
 
