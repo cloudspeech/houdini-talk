@@ -254,13 +254,11 @@ _That's_ the power of composition at work!
 
 Finally Step 4: do-it-yourself, define micro-dash-frontend in pure JavaScript.
 
-I will spare you the details, but it's only 3-point-4 kiloBytes
+One noteworthy detail is having to wait for the app-loading child element to finish,
+which can be done with a Promise.
+
+I will spare you further details, but it's only 3-point-4 kiloBytes
 compressed.
-
-This is because Houdini's trick needs little code, if you think carefully about
-composition _first_.
-
-Each web component should only do _one_ thing, and do it well.
 
 Finally, I invite you to see micro-dash-frontend for yourself!
 
