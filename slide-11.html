@@ -85,6 +85,10 @@
       .attr {
       color: #88aece
       }
+
+      .tag {
+      color: #f08d49
+      }
     </style>
   </head>
   <body onkeydown="let offset=(event.keyCode===32||event.keyCode===39)?1:-1;location.pathname=`slide-${Math.max(0,(location.pathname.replace(/\D/g,'')|0)+offset)}.html`">
@@ -105,8 +109,8 @@
     <ul>
       <li><b>step 2: attributes</b></li>
       <li>attribute <b class="attr">when</b></li>
-      <li>&ltscri-pt <b class="attr">when</b>="visible"&gt;</li>
-      <li>&ltscri-pt <b class="attr">when</b>="idle"&gt;</li>
+      <li><span class="tag">&lt;scri-pt <b class="attr">when</b>="visible"&gt;</span></li>
+      <li><span class="tag">&lt;scri-pt <b class="attr">when</b>="idle"&gt;</span></li>
     </ul>
   </body>
 </html>

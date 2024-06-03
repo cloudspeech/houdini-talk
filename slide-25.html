@@ -89,6 +89,12 @@
       transform: translateY(-3em);
       }
 
+      em {
+      color: var(--fg-color);
+      font-style: normal;
+      hyphens: auto
+      }
+
       .tag {
       color: #f08d49
       }
@@ -108,28 +114,28 @@
       </template>
     </scri-pt>
 
-    <h1>2. Slow page performance</h1>
+    <h1><trans-late>4. Internationalization<template lang="de">4. Internationalisierung</template></trans-late></h1>
     <ul>
-      <li><b>step 4a: define it</b></li>
-      <li>keep it simple. Use plain old JavaScript</li>
-      <li><pre>
- <code id="htmlViewer" style="color:rgb(255, 255, 255); font-weight:400;background-color:rgb(28, 27, 27);background:rgb(28, 27, 27);display:block;padding: .5em;"><span style="color:rgb(136, 174, 206); font-weight:400;">class</span> <span class="hljs-title class_">ScriPt</span> <span style="color:rgb(240, 141, 73); font-weight:400;">extends</span> <span style="color:rgb(240, 141, 73); font-weight:400;">HTMLElement</span> {
+      <li><b>step 4b: define it in JavaScript</b></li>
+      <li style="margin-bottom:0"><pre>
+ <code id="htmlViewer" style="color:rgb(255, 255, 255); font-weight:400;background-color:rgb(28, 27, 27);background:rgb(28, 27, 27);display:block;padding: .5em;"><span style="color:rgb(136, 174, 206); font-weight:400;">class</span> <span class="hljs-title class_">TransLate</span> <span style="color:rgb(240, 141, 73); font-weight:400;">extends</span> <span style="color:rgb(240, 141, 73); font-weight:400;">HTMLElement</span> {
   connectedCallback() {
-    <span style="color:rgb(136, 174, 206); font-weight:400;">if</span> (<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.getAttribute(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;when&quot;</span>) === <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;visible&quot;</span>) {
-      <span style="color:rgb(136, 174, 206); font-weight:400;">const</span> observer = new IntersectionObserver(entries =&gt; 
-      
-                       entries[<span style="color:rgb(240, 141, 73); font-weight:400;">0</span>].isIntersecting &amp;&amp;
-      
-                       <span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.#load() &amp;&amp; observer.disconnect() );
-      <span style="color:rgb(136, 174, 206); font-weight:400;">return</span> observer.observe(<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>);
-    }
-    requestIdleCallback(<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.#load);
+    <span style="color:rgb(136, 174, 206); font-weight:400;">const</span> text = <span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.textContent.trim();
+    <span style="color:rgb(136, 174, 206); font-weight:400;">const</span> textNode = new Text(text);
+    <span style="color:rgb(136, 174, 206); font-weight:400;">const</span> translations = { [pageLanguage]: text };
+    <span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.querySelectorAll(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;template&quot;</span>).forEach(template =&gt; {
+      <span style="color:rgb(136, 174, 206); font-weight:400;">const</span> language = template.getAttribute(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;lang&quot;</span>);
+      <span style="color:rgb(136, 174, 206); font-weight:400;">const</span> text = template.content.textContent.trim();
+      translations[language] = text;
+    });
+    textNodes.<span style="color:rgb(136, 174, 206); font-weight:400;">set</span>(textNode, translations);
+    <span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.replaceWith(textNode); <span style="color:rgb(153, 153, 153); font-weight:400;">// vanish!</span>
   }
-
-  #load = () =&gt; <span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.appendChild(<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.firstElementChild.content.cloneNode(<span style="color:rgb(240, 141, 73); font-weight:400;">true</span>));
 }
 
-customElements.define(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;scri-pt&quot;</span>, ScriPt);</code></pre></li>
+customElements.define(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;trans-late&quot;</span>, TransLate);
+      </code></pre></li>
+      <li><em>28</em> lines of code in total</li>
     </ul>
   </body>
 </html>

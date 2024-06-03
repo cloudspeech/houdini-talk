@@ -89,8 +89,23 @@
       transform: translateY(-3em);
       }
 
+      em {
+      color: var(--fg-color);
+      font-style: normal;
+      hyphens: auto
+      }
+
+      
+      .attr {
+      color: #88aece
+      }
+
       .tag {
       color: #f08d49
+      }
+
+      .val {
+      color: #fff;
       }
     </style>
   </head>
@@ -108,28 +123,15 @@
       </template>
     </scri-pt>
 
-    <h1>2. Slow page performance</h1>
+    <h1>5. Server-Side Rendering</h1>
     <ul>
-      <li><b>step 4a: define it</b></li>
-      <li>keep it simple. Use plain old JavaScript</li>
-      <li><pre>
- <code id="htmlViewer" style="color:rgb(255, 255, 255); font-weight:400;background-color:rgb(28, 27, 27);background:rgb(28, 27, 27);display:block;padding: .5em;"><span style="color:rgb(136, 174, 206); font-weight:400;">class</span> <span class="hljs-title class_">ScriPt</span> <span style="color:rgb(240, 141, 73); font-weight:400;">extends</span> <span style="color:rgb(240, 141, 73); font-weight:400;">HTMLElement</span> {
-  connectedCallback() {
-    <span style="color:rgb(136, 174, 206); font-weight:400;">if</span> (<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.getAttribute(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;when&quot;</span>) === <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;visible&quot;</span>) {
-      <span style="color:rgb(136, 174, 206); font-weight:400;">const</span> observer = new IntersectionObserver(entries =&gt; 
-      
-                       entries[<span style="color:rgb(240, 141, 73); font-weight:400;">0</span>].isIntersecting &amp;&amp;
-      
-                       <span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.#load() &amp;&amp; observer.disconnect() );
-      <span style="color:rgb(136, 174, 206); font-weight:400;">return</span> observer.observe(<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>);
-    }
-    requestIdleCallback(<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.#load);
-  }
-
-  #load = () =&gt; <span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.appendChild(<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.firstElementChild.content.cloneNode(<span style="color:rgb(240, 141, 73); font-weight:400;">true</span>));
-}
-
-customElements.define(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;scri-pt&quot;</span>, ScriPt);</code></pre></li>
+      <li><b>step 2a: attributes</b></li>
+      <li>attribute <b class="attr">ref</b></li>
+      <li><span class="tag">&lt;sig-nal <b class="attr">ref</b>="inc"&gt;+&lt;/sig-nal&gt;</span></li>
+      <li><b class="attr">ref</b>erence a place by name</li>
+      <li>attribute <b class="attr">new</b></li>
+      <li><span class="tag">&lt;sig-nal <b class="attr">new</b>="counter"&gt;<i class="val">initial value</i>&lt;/sig-nal&gt;</span></li>
+      <li>ref + <b class="attr">new</b> named signal</li>
     </ul>
   </body>
 </html>

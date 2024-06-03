@@ -82,6 +82,9 @@
       font-size: 1.5em
       }
       
+      .tag {
+      color: #f08d49
+      }
     </style>
   </head>
   <body onkeydown="let offset=(event.keyCode===32||event.keyCode===39)?1:-1;location.pathname=`slide-${Math.max(0,(location.pathname.replace(/\D/g,'')|0)+offset)}.html`">
@@ -100,8 +103,8 @@
 
     <h1>1. UI components</h1>
     <ul>
-      <li>brand identity &rarr; design system &rarr; UI components</li>
-      <li>AXA Pattern Library = web components</li>
+      <li>brand identity &rarr; design system &rarr; UI component &rarr; <span class="tag">&lt;web-component&gt;</span></li>
+      <li>AXA Pattern Library =  <span class="tag">&lt;axa-button&gt; &lt;axa-datepicker&gt; &hellip;</span></li>
       <li>live on every page of axa.ch</li>
       <li>Houdini's trick at work since 2019</li>
     </ul>

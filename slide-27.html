@@ -89,6 +89,12 @@
       transform: translateY(-3em);
       }
 
+      em {
+      color: var(--fg-color);
+      font-style: normal;
+      hyphens: auto
+      }
+
       .tag {
       color: #f08d49
       }
@@ -108,28 +114,63 @@
       </template>
     </scri-pt>
 
-    <h1>2. Slow page performance</h1>
+    <h1>5. Server-Side Rendering</h1>
+    <blockquote>
+      <p>&bdquo;interactivity + signals needed!&rdquo;</p>
+    </blockquote>
     <ul>
-      <li><b>step 4a: define it</b></li>
-      <li>keep it simple. Use plain old JavaScript</li>
-      <li><pre>
- <code id="htmlViewer" style="color:rgb(255, 255, 255); font-weight:400;background-color:rgb(28, 27, 27);background:rgb(28, 27, 27);display:block;padding: .5em;"><span style="color:rgb(136, 174, 206); font-weight:400;">class</span> <span class="hljs-title class_">ScriPt</span> <span style="color:rgb(240, 141, 73); font-weight:400;">extends</span> <span style="color:rgb(240, 141, 73); font-weight:400;">HTMLElement</span> {
-  connectedCallback() {
-    <span style="color:rgb(136, 174, 206); font-weight:400;">if</span> (<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.getAttribute(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;when&quot;</span>) === <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;visible&quot;</span>) {
-      <span style="color:rgb(136, 174, 206); font-weight:400;">const</span> observer = new IntersectionObserver(entries =&gt; 
-      
-                       entries[<span style="color:rgb(240, 141, 73); font-weight:400;">0</span>].isIntersecting &amp;&amp;
-      
-                       <span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.#load() &amp;&amp; observer.disconnect() );
-      <span style="color:rgb(136, 174, 206); font-weight:400;">return</span> observer.observe(<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>);
-    }
-    requestIdleCallback(<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.#load);
-  }
+      <li>sprinkle bits of <em>interactivity</em> on components</li>
+      <li><em>signals</em>: fine-grained reactive DOM updates</li>
+      <li><div>
+	  <template shadowrootmode="open">
+	    <style>
+	      .btn {
+	      display: inline-block;
+	      box-shadow: 0px 0px 3px 3px var(--fg-color);
+	      padding: 2px;
+	      cursor: pointer;
+	      }
 
-  #load = () =&gt; <span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.appendChild(<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.firstElementChild.content.cloneNode(<span style="color:rgb(240, 141, 73); font-weight:400;">true</span>));
-}
+	      .btn:hover {
+	      transform: scale(1.1)
+	      }
+	      
+	      .table {
+	      display: table;
+	      margin-top: 1em;
+	      }
 
-customElements.define(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;scri-pt&quot;</span>, ScriPt);</code></pre></li>
+	      .table p {
+	      display: table-row
+	      }
+	      .table span {
+	      display: table-cell;
+	      padding: .1em;
+	      text-align: center;
+	      border: 1px solid #ddd;
+	      }
+
+	    </style>
+
+	    signal value <i class="val"><sig-nal new="counter">3</sig-nal></i> &rarr; <i class="val btn" @click="counter"><sig-nal ref="four">4</sig-nal></i> &rarr; <i class="val btn" @click="counter"><sig-nal ref="five">5</sig-nal></i>: subscribers update
+	    <div class="table">
+	      <p>
+		<span>subscriber 1</span><span>subscriber 2</span>
+	      </p>
+	      <p>
+		<span .textContent="counter" style="color:green"><sig-nal ref="subscriber1">3</sig-nal></span><span .textContent="counter"  style="color:red"><sig-nal ref="subscriber2">3</sig-nal></span>
+	      </p>
+	      <sig-nal hydrate>
+		{ subscriber1: {".textContent": rerender},
+		  subscriber2: {".textContent": rerender},
+		  four: {"@click": ({signal}) => (signal.value = '4')},
+		  five: {"@click": ({signal}) => (signal.value = '5')}
+		}
+	      </sig-nal>
+	    </div>
+	  </template>
+	</div>
+      </li>
     </ul>
   </body>
 </html>

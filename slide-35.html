@@ -6,6 +6,7 @@
     <meta name="description" content="Houdini talk about the power of web components for Enterprise frontend"/>
     <meta name="theme-color" content="#ffffff">
     <title>Houdini talk</title>
+    <link rel="preload" href="./counterdemo.css"/>
     <script type="module" src="./src/scri-pt.js"></script>
     <script type="module">let e={},t=[(e,t)=>e[t],(e,t)=>e.hasAttribute(t),(e,t)=>e.getAttribute(t),e=>1];class s extends WeakMap{use=(e,t={})=>this.get(e)||this.set(e,t).get(e)}let i={},n=new s,a=new s,l=new s,r=(e,t)=>"number"===t?0|e:e;class h{#e;#t=[];#s=0;constructor(e){this.#e=e}#i=()=>1==++this.#s&&queueMicrotask((()=>{this.#t.map((e=>e())),this.#s=0}));get value(){return this.#e}set value(e){this.#e=e,this.#i()}onChange(e,t){t&&e(this.#e),this.#t.push((()=>e(this.#e)))}when(e,t=[]){let s=new h(e(this.#e));return this.onChange((t=>s.value=e(t))),t.map((e=>e.onChange(this.#i))),s}}let o={},u={};class c extends HTMLElement{#n=(e,t=this)=>t.getAttribute(e);#a=(e,s)=>{let i=e[0],n=e.slice(1),l=this.#n(e,s),r=".?!@".indexOf(i);if(r>=0){let i=t[r](s,n);a.use(s)[e]={init:i,name:l},queueMicrotask((()=>s.removeAttribute(e)))}};static Signal=h;static hydrate=(t,s,r)=>{let h="string"==typeof t?i[t]:t.map((e=>document.querySelector(e).shadowRoot));for(let t of h)if(!t.h){t.h=1;let i=l.get(t)||e;for(let l in s){let h=n.get(t)[l],u=a.get(h);if(u){let t=s[l];for(let s in t){let n=t[s];s in o&&(n=o[s](n));let{name:a,init:l}=u[s.toLowerCase()]||e,{signal:c,type:d,id:g}=a&&i[a]||e;r instanceof Object&&g&&c&&(r[g]=c);let m=s.slice(1),f=e=>n({type:d,name:m,signal:c,signals:i,init:l,domNode:h,e:e});a&&(s.startsWith("@")?h.addEventListener(m,f):queueMicrotask(f))}}}}};static plugin=(e,t)=>(o[e]=t)&&u[e]&&u[e]();static usable=(e,t=[])=>{for(let s of e)o[s]||t.push(new Promise((e=>u[s]=e)));return Promise.all(t)};static render=e=>({domNode:t,name:s})=>t[s]="function"==typeof e?e():e;static rerender=(e,t=!0)=>e.signal.onChange((t=>c.render(t)(e)),t);connectedCallback(){let e=this[this.#n("for")||"parentNode"],t=this.getRootNode(),s=this.#n("new"),a=s||this.#n("ref")||crypto.randomUUID(),o=this.#n("type"),{id:u,textContent:c}=this;(i[a]=i[a]||[]).push(t),n.use(t)[a]=e,s&&(l.use(t)[a]={signal:new h(r(c,o)),type:o,id:u});for(let t of e.getAttributeNames())this.#a(t,e);null!==this.#n("hydrate")&&(new Function(`let{hydrate,render,rerender}=customElements.get('sig-nal');hydrate('${a}',${c})`)(),c=""),this.className||this.replaceWith(c)}}customElements.define("sig-nal",c);
 </script>
@@ -89,8 +90,23 @@
       transform: translateY(-3em);
       }
 
+      em, a {
+      color: var(--fg-color);
+      font-style: normal;
+      hyphens: auto
+      }
+
+      
+      .attr {
+      color: #88aece
+      }
+
       .tag {
       color: #f08d49
+      }
+
+      .val {
+      color: #fff;
       }
     </style>
   </head>
@@ -108,28 +124,15 @@
       </template>
     </scri-pt>
 
-    <h1>2. Slow page performance</h1>
+    <h1>Happy escaping!</h1>
+    <blockquote>
+      <p>&bdquo;with Houdini's trick!&rdquo;</p>
+    </blockquote>
     <ul>
-      <li><b>step 4a: define it</b></li>
-      <li>keep it simple. Use plain old JavaScript</li>
-      <li><pre>
- <code id="htmlViewer" style="color:rgb(255, 255, 255); font-weight:400;background-color:rgb(28, 27, 27);background:rgb(28, 27, 27);display:block;padding: .5em;"><span style="color:rgb(136, 174, 206); font-weight:400;">class</span> <span class="hljs-title class_">ScriPt</span> <span style="color:rgb(240, 141, 73); font-weight:400;">extends</span> <span style="color:rgb(240, 141, 73); font-weight:400;">HTMLElement</span> {
-  connectedCallback() {
-    <span style="color:rgb(136, 174, 206); font-weight:400;">if</span> (<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.getAttribute(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;when&quot;</span>) === <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;visible&quot;</span>) {
-      <span style="color:rgb(136, 174, 206); font-weight:400;">const</span> observer = new IntersectionObserver(entries =&gt; 
-      
-                       entries[<span style="color:rgb(240, 141, 73); font-weight:400;">0</span>].isIntersecting &amp;&amp;
-      
-                       <span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.#load() &amp;&amp; observer.disconnect() );
-      <span style="color:rgb(136, 174, 206); font-weight:400;">return</span> observer.observe(<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>);
-    }
-    requestIdleCallback(<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.#load);
-  }
-
-  #load = () =&gt; <span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.appendChild(<span style="color:rgb(136, 174, 206); font-weight:400;">this</span>.firstElementChild.content.cloneNode(<span style="color:rgb(240, 141, 73); font-weight:400;">true</span>));
-}
-
-customElements.define(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;scri-pt&quot;</span>, ScriPt);</code></pre></li>
+      <li>there's an <s>app</s> <em>web component</em> for that!</li>
+      <li>for those impossible Enterprise situations</li>
+      <li>a principled way to escape</li>
+      <li><em>thanks for listening!</em></li>
     </ul>
   </body>
 </html>

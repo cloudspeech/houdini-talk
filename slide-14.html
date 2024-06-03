@@ -93,6 +93,10 @@
       color: var(--fg-color);
       font-style: normal;
       }
+
+      .tag {
+      color: #f08d49
+      }
     </style>
   </head>
   <body onkeydown="let offset=(event.keyCode===32||event.keyCode===39)?1:-1;location.pathname=`slide-${Math.max(0,(location.pathname.replace(/\D/g,'')|0)+offset)}.html`">
@@ -113,7 +117,7 @@
     <ul>
       <li><b>step 4b: define it in JavaScript</b></li>
       <li><em>13</em> lines of code</li>
-      <li>production version called <em>axa-script</em></li>
+      <li>production version called <span class="tag">&lt;axa-script&gt;</span></li>
       <li>live on axa.ch</li>
     </ul>
   </body>

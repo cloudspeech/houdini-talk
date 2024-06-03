@@ -16,6 +16,7 @@
       }
       
       body {
+      position: relative;
       margin: 0;
       padding: 0;
       background-image: url(houdini.webp);
@@ -81,7 +82,17 @@
       width: fit-content;
       font-size: 1.5em
       }
-      
+
+      .tag {
+      color: #f08d49
+      }
+
+      svg {
+      position: absolute;
+      top: 4em;
+      right: 0;
+      width: 30%;
+      }
     </style>
   </head>
   <body onkeydown="let offset=(event.keyCode===32||event.keyCode===39)?1:-1;location.pathname=`slide-${Math.max(0,(location.pathname.replace(/\D/g,'')|0)+offset)}.html`">
@@ -101,10 +112,33 @@
     <h1>The Magic Trick</h1>
     <blockquote><p>&bdquo;write a web component!&rdquo;</p></blockquote>
     <ul>
-      <li>&lt;web-component&gt; is HTML</li>
+      <li><span class="tag">&lt;web-component&gt;</span> is HTML</li>
       <li>always a dash in the name</li>
       <li>define it <i>yourself</i> with a little JavaScript</li>
       <li>all major browsers support them</li>
     </ul>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.7 400.4">
+      <defs>
+	<filter id="a" color-interpolation-filters="sRGB">
+	  <feGaussianBlur stdDeviation="6.3"/>
+	</filter>
+      </defs>
+      <path fill-opacity=".5" fill-rule="evenodd" d="m315 299.8 69.4 52.6-38.2-91.6 100.1 22.9L387 232h110.7l-102.8-31.5 91-40-76.6-16L449 95.1l-62.6 9.2 23-62.7-59.6 38.9-14-57.8-42.3 51.8c0-3.6-24.9-51-26.2-51s-25.6 50-25.6 50l-44.4-46.2-11.1 54.4-41.6-46.6s-.9 52-3.5 52c-2.7 0-63-32.2-63-32.2s14.5 59.2 14.5 60.7c0 1.4-65.4-10.3-65.4-10.3L81.1 148 24 167.6s47.8 36.2 46.5 37.7S28.2 243 28.2 243l71.8-1.8c-.2 1.2-69.9 54.5-69.9 56s75.8-19.1 75.8-19.1l-51 74.5 85.2-60.4-18 65.6 50.2-41.2 2.7 44 48.8-39.5 29 64.2 18.9-62.5 35 27 8.3-50.1z" filter="url(#a)"/>
+      <path fill="#ffdcb4" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width="10" d="m296 282 69.4 52.6-38.2-91.6 100.1 22.9-59.3-51.6h110.7l-102.8-31.5 91-40-76.6-16L430 77.3l-62.6 9.2 23-62.7-59.6 38.9-14-57.8-42.3 51.8c0-3.6-24.9-51-26.2-51-1.3 0-25.6 50-25.6 50L178.3 9.6 167.2 64l-41.6-46.6s-.9 52-3.5 52c-2.7 0-63-32.2-63-32.2s14.5 59.2 14.5 60.7c0 1.4-65.4-10.3-65.4-10.3l53.9 42.7L5 149.8s47.9 36.2 46.5 37.7c-1.3 1.4-42.3 37.8-42.3 37.8l71.8-1.8c-.2 1.2-69.9 54.5-69.9 56S87 260.4 87 260.4l-51.1 74.5 85.2-60.4-18 65.6 50.2-41.2 2.8 44 48.7-39.5 30.5 54.4 17.4-52.7 35 27L296 282z"/>
+      <text x="100" y="140">
+	Houdini's escape
+      </text>
+      <text x="100" y="180">
+	<tspan font-weight="bold" fill="red">2024 edition!</tspan>
+      </text>
+      <style>
+	text{
+        dominant-baseline: hanging;
+        font: 28px monospace;
+	}
+      </style>
+    </svg>
+    
   </body>
 </html>
