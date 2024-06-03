@@ -107,11 +107,20 @@
       .val {
       color: #fff;
       }
+      
+      :root {
+      --li-color: #b571f4;
+      }
+      
+      li {
+      color: var(--li-color)
+      }
+
     </style>
   </head>
-  <body onkeydown="let offset=(event.keyCode===32||event.keyCode===39)?1:-1;location.pathname=`slide-${Math.max(0,(location.pathname.replace(/\D/g,'')|0)+offset)}.html`">
-
-    <select aria-label="select language" id="language" onchange="document.documentElement.setAttribute('lang', this.value)">
+  <body onkeydown="let offset=(event.keyCode===32||event.keyCode===39)?1:event.keyCode===37?-1:0;if(!offset)return;location.pathname=`slide-${Math.max(0,(location.pathname.replace(/\D/g,'')|0)+offset)}.html`">
+    <script>if(location.search)document.body.style.fontSize=location.search.replace(/\D/g,'')+'px';if(location.hash)document.documentElement.style.setProperty('--li-color',location.hash.slice(1).replace(/\+/g,' '));</script>
+<select aria-label="select language" id="language" onchange="document.documentElement.setAttribute('lang', this.value)">
       <option selected value="en">EN</option>
       <option value="de">DE</option>
     </select>
@@ -126,7 +135,7 @@
     <h1>5. Server-Side Rendering</h1>
     <ul>
       <li><b>step 3: compose</b></li>
-      <li><pre>
+      <li style="margin-bottom:0"><pre>
  <code id="htmlViewer" style="color:rgb(255, 255, 255); font-weight:400;background-color:rgb(28, 27, 27);background:rgb(28, 27, 27);display:block;padding: .5em;"><span style="color:rgb(255, 255, 255); font-weight:400;">&lt;<span style="color:rgb(240, 141, 73); font-weight:400;">template</span> <span style="color:rgb(136, 174, 206); font-weight:400;">shadowrootmode</span>=<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;open&quot;</span>&gt;</span>
       <span style="color:rgb(255, 255, 255); font-weight:400;">&lt;<span style="color:rgb(240, 141, 73); font-weight:400;">link</span> <span style="color:rgb(136, 174, 206); font-weight:400;">rel</span>=<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;stylesheet&quot;</span> <span style="color:rgb(136, 174, 206); font-weight:400;">href</span>=<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;./counterdemo.css&quot;</span>/&gt;</span>
       <span style="color:rgb(255, 255, 255); font-weight:400;">&lt;<span style="color:rgb(240, 141, 73); font-weight:400;">h1</span>&gt;</span>Interactive island<span style="color:rgb(255, 255, 255); font-weight:400;">&lt;/<span style="color:rgb(240, 141, 73); font-weight:400;">h1</span>&gt;</span>
@@ -144,7 +153,8 @@
         <span style="color:rgb(255, 255, 255); font-weight:400;">&lt;/<span style="color:rgb(240, 141, 73); font-weight:400;">sig-nal</span>&gt;</span>
      <span style="color:rgb(255, 255, 255); font-weight:400;">&lt;/<span style="color:rgb(240, 141, 73); font-weight:400;">div</span>&gt;</span>
 <span style="color:rgb(255, 255, 255); font-weight:400;">&lt;/<span style="color:rgb(240, 141, 73); font-weight:400;">template</span>&gt;</span>
-</code></pre></li>
+      </code></pre></li>
+      <li><span class="attr">hydrate:</span> names of DOM nodes &harr; reactions</li>
     </ul>
   </body>
 </html>

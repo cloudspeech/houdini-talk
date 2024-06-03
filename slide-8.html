@@ -85,11 +85,20 @@
       .tag {
       color: #f08d49
       }
+      
+      :root {
+      --li-color: #b571f4;
+      }
+      
+      li {
+      color: var(--li-color)
+      }
+
     </style>
   </head>
-  <body onkeydown="let offset=(event.keyCode===32||event.keyCode===39)?1:-1;location.pathname=`slide-${Math.max(0,(location.pathname.replace(/\D/g,'')|0)+offset)}.html`">
-
-    <select aria-label="select language" id="language" onchange="document.documentElement.setAttribute('lang', this.value)">
+  <body onkeydown="let offset=(event.keyCode===32||event.keyCode===39)?1:event.keyCode===37?-1:0;if(!offset)return;location.pathname=`slide-${Math.max(0,(location.pathname.replace(/\D/g,'')|0)+offset)}.html`">
+    <script>if(location.search)document.body.style.fontSize=location.search.replace(/\D/g,'')+'px';if(location.hash)document.documentElement.style.setProperty('--li-color',location.hash.slice(1).replace(/\+/g,' '));</script>
+<select aria-label="select language" id="language" onchange="document.documentElement.setAttribute('lang', this.value)">
       <option selected value="en">EN</option>
       <option value="de">DE</option>
     </select>
