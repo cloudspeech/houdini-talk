@@ -96,7 +96,7 @@
 
     </style>
   </head>
-  <body onkeydown="let offset=(event.keyCode===32||event.keyCode===39)?1:event.keyCode===37?-1:0;if(!offset)return;let p=location.pathname;let prefix=p.slice(0,p.lastIndexOf('/')+1);let nr=(p.replace(/\D/g,'')|0)+offset;if(nr<0||nr>35)return;location.pathname=`${prefix}slide-${nr + offset}.html`">
+  <body onkeydown="let offset=(event.keyCode===32||event.keyCode===39)?1:event.keyCode===37?-1:0;if(!offset)return;let p=location.pathname;let prefix=p.slice(0,p.lastIndexOf('/')+1);let nr=(p.replace(/\D/g,'')|0)+offset;if(nr<0||nr>35)return;location.pathname=`${prefix}slide-${nr}.html`">
     <script>if(location.search)document.body.style.fontSize=location.search.replace(/\D/g,'')+'px';if(location.hash)document.documentElement.style.setProperty('--li-color',location.hash.slice(1).replace(/\+/g,' '));</script>
     <select aria-label="select language" id="language" onchange="document.documentElement.setAttribute('lang', this.value)">
       <option selected value="en">EN</option>
