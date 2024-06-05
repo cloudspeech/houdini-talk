@@ -39,13 +39,13 @@ language selector in the top right corner.
 ## Reactions during the Question Period
 
 I got an interesting question that expressed curiousity or even doubt
-in slide 33. The audience member asked to see the page source.
+about slide 33. The audience member asked to see the page source.
 
 Using `View Page Source` on that very slide I could demonstrate that,
 indeed, there was no hidden magic or precompilation involved, just
 composition of few custom elements and normal HTML tags.
 
 I also showed that in the Elements tab of Chrome Developer Tools one
-can see that both the &lt;sig-nal&gt; and lt;trans-late&gt; web
+can see that both the &lt;sig-nal&gt; and &lt;trans-late&gt; web
 components are of the self-vanishing type, as explained in the speaker
 notes.
